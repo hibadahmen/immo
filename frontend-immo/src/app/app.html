@@ -1,0 +1,11 @@
+<div class="site-frame">
+  <a class="skip-link" href="#contenu">Aller au contenu</a>
+  <app-navbar />
+  @if (chargement) { <div class="loading-bar" role="status">Chargement de la page…</div> }
+  @if (auth.erreur) { <p class="error" role="alert">{{auth.erreur}}</p> }
+  <div class="app-layout" [class.with-sidebar]="espacePersonnel">
+    @if (espacePersonnel) { <app-sidebar /> }
+    <main id="contenu" tabindex="-1" [attr.aria-busy]="chargement"><router-outlet /></main>
+  </div>
+  <app-footer />
+</div>

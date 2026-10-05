@@ -1,0 +1,54 @@
+<section class="hero">
+  <img class="hero-background" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85" alt="Architecture d'une maison contemporaine ouverte sur la nature" fetchpriority="high">
+  <div class="hero-copy">
+    <p class="eyebrow">UN LIEU À VOUS. UNE NOUVELLE HISTOIRE.</p>
+    <h1>Trouvez le logement<br>qui vous ressemble</h1>
+    <p class="hero-description">Découvrez des biens à louer et échangez directement<br class="desktop-break"> avec leurs propriétaires.</p>
+  </div>
+  <div class="hero-search"><app-filtres-logements [compact]="true" (recherche)="chercher($event)" /></div>
+  <span class="hero-caption">LA BONNE ADRESSE POUR VOTRE PROCHAIN CHAPITRE</span>
+</section>
+
+<section class="container categories-section" aria-label="Catégories de logements">
+  <div class="category-grid">
+    @for (categorie of categories; track categorie.type) {
+      <a class="category-card" routerLink="/logements" [queryParams]="{type: categorie.type}">
+        <img [src]="'https://images.unsplash.com/' + categorie.image + '?auto=format&fit=crop&w=600&q=80'" [alt]="categorie.titre" loading="lazy">
+        <span>{{categorie.titre}} <span aria-hidden="true">↗</span></span>
+      </a>
+    }
+  </div>
+</section>
+
+<section class="container section introduction">
+  <div>
+    <p class="eyebrow">PENSÉ POUR VOTRE PROCHAINE ÉTAPE</p>
+    <h2>Votre prochain logement,<br>en toute simplicité</h2>
+    <p class="subtitle">Des propriétaires et des locataires réunis au même endroit. Explorez les annonces, trouvez votre coup de cœur et préparez votre arrivée, à votre rythme.</p>
+    @if (statistiques.length) { <div class="platform-stats">
+      @for (stat of statistiques; track stat.libelle) { <div><strong>{{stat.valeur}}</strong><span>{{stat.libelle}}</span></div> }
+    </div><small>Chiffres issus des données enregistrées sur la plateforme.</small> }
+  </div>
+  <div class="photo-collage">
+    <img class="collage-main" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Salon lumineux pour votre prochain chez-vous" loading="lazy">
+    <img class="collage-small" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" alt="Intérieur chaleureux et confortable" loading="lazy">
+    <div class="collage-label"><span aria-hidden="true">⌂</span><strong>Un chez-vous,<br>à votre image.</strong></div>
+  </div>
+</section>
+
+<section class="container section" id="comment-ca-marche">
+  <div class="section-heading"><div><p class="eyebrow">DE L'ENVIE À LA NOUVELLE ADRESSE</p><h2>Une location plus simple</h2></div><p class="section-description">Quatre étapes pour donner vie<br>à votre projet de location.</p></div>
+  <div class="service-grid">
+    <a class="service-card" routerLink="/logements"><span class="service-icon" aria-hidden="true">⌕</span><span class="step-number">01</span><h3>Recherchez votre logement</h3><p>Filtrez les annonces selon votre ville, votre budget et vos envies.</p><span class="service-link">Trouver mon adresse ↗</span></a>
+    <a class="service-card" routerLink="/logements"><span class="service-icon" aria-hidden="true">⌂</span><span class="step-number">02</span><h3>Consultez les détails</h3><p>Découvrez les photos, les équipements et le loyer de chaque logement.</p><span class="service-link">Explorer les annonces ↗</span></a>
+    <a class="service-card" routerLink="/reservations"><span class="service-icon" aria-hidden="true">▤</span><span class="step-number">03</span><h3>Envoyez votre demande</h3><p>Choisissez vos dates et adressez votre projet au propriétaire.</p><span class="service-link">Suivre mes demandes ↗</span></a>
+    <a class="service-card featured" routerLink="/proprietaire/ajouter"><span class="service-icon" aria-hidden="true">＋</span><span class="step-number">04</span><h3>Publiez votre bien</h3><p>Ajoutez votre logement et gérez les demandes depuis votre espace.</p><span class="service-link">Partager mon bien ↗</span></a>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-heading"><div><p class="eyebrow">VOTRE PROCHAIN COUP DE CŒUR</p><h2>Découvrez les logements disponibles</h2><p class="subtitle">De belles adresses pour écrire la suite de votre histoire.</p></div></div>
+  <app-etat-requete [chargement]="chargement" [erreur]="erreur" />
+  @if (!chargement && !erreur) { <div class="cards">@for (logement of recents; track logement.id) { <app-carte-logement [logement]="logement" /> } @empty { <div class="empty"><h3>De nouvelles adresses arrivent bientôt</h3><p>Aucun logement n'est publié pour le moment.</p></div> }</div> }
+  <div class="center-action"><a appBouton routerLink="/logements">Voir tous les logements ↗</a></div>
+</section>

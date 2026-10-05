@@ -1,0 +1,368 @@
+import { injectQuery as __vite__injectQuery } from "/@vite/client";import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/chunk-A62YAZGQ.js");import {
+  AuthService
+} from "/chunk-ZA77HVVD.js";
+import {
+  messageErreur
+} from "/chunk-UUCHQNM6.js";
+import {
+  __async,
+  __spreadValues
+} from "/chunk-Y5RQAIA6.js";
+
+// src/app/pages/compte.ts
+import { Component, inject } from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache-integration/20.3.37/frontend-immo/vite/deps/@angular_core.js?v=7c0d3e9f";
+import { FormsModule } from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache-integration/20.3.37/frontend-immo/vite/deps/@angular_forms.js?v=7c0d3e9f";
+import { ActivatedRoute, Router, RouterLink } from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache-integration/20.3.37/frontend-immo/vite/deps/@angular_router.js?v=7c0d3e9f";
+import * as i0 from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache-integration/20.3.37/frontend-immo/vite/deps/@angular_core.js?v=7c0d3e9f";
+import * as i1 from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache-integration/20.3.37/frontend-immo/vite/deps/@angular_forms.js?v=7c0d3e9f";
+function Compte_Conditional_14_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "p", 7);
+    i0.\u0275\u0275text(1);
+    i0.\u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275textInterpolate(ctx_r1.erreur);
+  }
+}
+function Compte_Conditional_15_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "p", 8);
+    i0.\u0275\u0275text(1);
+    i0.\u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275textInterpolate(ctx_r1.succes);
+  }
+}
+function Compte_Conditional_18_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r4 = i0.\u0275\u0275getCurrentView();
+    i0.\u0275\u0275elementStart(0, "div", 10)(1, "label");
+    i0.\u0275\u0275text(2, "Pr\xE9nom");
+    i0.\u0275\u0275elementStart(3, "input", 14);
+    i0.\u0275\u0275twoWayListener("ngModelChange", function Compte_Conditional_18_Template_input_ngModelChange_3_listener($event) {
+      i0.\u0275\u0275restoreView(_r4);
+      const ctx_r1 = i0.\u0275\u0275nextContext();
+      i0.\u0275\u0275twoWayBindingSet(ctx_r1.compte.prenom, $event) || (ctx_r1.compte.prenom = $event);
+      return i0.\u0275\u0275resetView($event);
+    });
+    i0.\u0275\u0275elementEnd()();
+    i0.\u0275\u0275elementStart(4, "label");
+    i0.\u0275\u0275text(5, "Nom");
+    i0.\u0275\u0275elementStart(6, "input", 15);
+    i0.\u0275\u0275twoWayListener("ngModelChange", function Compte_Conditional_18_Template_input_ngModelChange_6_listener($event) {
+      i0.\u0275\u0275restoreView(_r4);
+      const ctx_r1 = i0.\u0275\u0275nextContext();
+      i0.\u0275\u0275twoWayBindingSet(ctx_r1.compte.nom, $event) || (ctx_r1.compte.nom = $event);
+      return i0.\u0275\u0275resetView($event);
+    });
+    i0.\u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance(3);
+    i0.\u0275\u0275twoWayProperty("ngModel", ctx_r1.compte.prenom);
+    i0.\u0275\u0275advance(3);
+    i0.\u0275\u0275twoWayProperty("ngModel", ctx_r1.compte.nom);
+  }
+}
+function Compte_Conditional_22_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = i0.\u0275\u0275getCurrentView();
+    i0.\u0275\u0275elementStart(0, "label");
+    i0.\u0275\u0275text(1, "T\xE9l\xE9phone");
+    i0.\u0275\u0275elementStart(2, "input", 16);
+    i0.\u0275\u0275twoWayListener("ngModelChange", function Compte_Conditional_22_Template_input_ngModelChange_2_listener($event) {
+      i0.\u0275\u0275restoreView(_r5);
+      const ctx_r1 = i0.\u0275\u0275nextContext();
+      i0.\u0275\u0275twoWayBindingSet(ctx_r1.compte.telephone, $event) || (ctx_r1.compte.telephone = $event);
+      return i0.\u0275\u0275resetView($event);
+    });
+    i0.\u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance(2);
+    i0.\u0275\u0275twoWayProperty("ngModel", ctx_r1.compte.telephone);
+  }
+}
+function Compte_Conditional_23_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r6 = i0.\u0275\u0275getCurrentView();
+    i0.\u0275\u0275elementStart(0, "label");
+    i0.\u0275\u0275text(1, "Mot de passe");
+    i0.\u0275\u0275elementStart(2, "input", 17);
+    i0.\u0275\u0275twoWayListener("ngModelChange", function Compte_Conditional_23_Template_input_ngModelChange_2_listener($event) {
+      i0.\u0275\u0275restoreView(_r6);
+      const ctx_r1 = i0.\u0275\u0275nextContext();
+      i0.\u0275\u0275twoWayBindingSet(ctx_r1.motDePasse, $event) || (ctx_r1.motDePasse = $event);
+      return i0.\u0275\u0275resetView($event);
+    });
+    i0.\u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance(2);
+    i0.\u0275\u0275twoWayProperty("ngModel", ctx_r1.motDePasse);
+    i0.\u0275\u0275property("minlength", ctx_r1.mode === "inscription" ? 6 : 1);
+  }
+}
+function Compte_Conditional_24_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r7 = i0.\u0275\u0275getCurrentView();
+    i0.\u0275\u0275elementStart(0, "label");
+    i0.\u0275\u0275text(1, "Je suis");
+    i0.\u0275\u0275elementStart(2, "select", 18);
+    i0.\u0275\u0275twoWayListener("ngModelChange", function Compte_Conditional_24_Template_select_ngModelChange_2_listener($event) {
+      i0.\u0275\u0275restoreView(_r7);
+      const ctx_r1 = i0.\u0275\u0275nextContext();
+      i0.\u0275\u0275twoWayBindingSet(ctx_r1.compte.role, $event) || (ctx_r1.compte.role = $event);
+      return i0.\u0275\u0275resetView($event);
+    });
+    i0.\u0275\u0275elementStart(3, "option", 19);
+    i0.\u0275\u0275text(4, "Locataire");
+    i0.\u0275\u0275elementEnd();
+    i0.\u0275\u0275elementStart(5, "option", 20);
+    i0.\u0275\u0275text(6, "Propri\xE9taire");
+    i0.\u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const ctx_r1 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance(2);
+    i0.\u0275\u0275twoWayProperty("ngModel", ctx_r1.compte.role);
+  }
+}
+function Compte_Conditional_25_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "p", 7);
+    i0.\u0275\u0275text(1, "V\xE9rifiez les champs : email valide, t\xE9l\xE9phone de 8 \xE0 20 caract\xE8res et, \xE0 l'inscription, mot de passe de 6 caract\xE8res minimum.");
+    i0.\u0275\u0275elementEnd();
+  }
+}
+function Compte_Conditional_28_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "p", 13);
+    i0.\u0275\u0275text(1, "Enregistrement en cours\u2026");
+    i0.\u0275\u0275elementEnd();
+  }
+}
+function Compte_Conditional_29_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "p");
+    i0.\u0275\u0275text(1, "Pas encore de compte ? ");
+    i0.\u0275\u0275elementStart(2, "a", 21);
+    i0.\u0275\u0275text(3, "S'inscrire");
+    i0.\u0275\u0275elementEnd()();
+  }
+}
+function Compte_Conditional_30_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "p");
+    i0.\u0275\u0275text(1, "D\xE9j\xE0 un compte ? ");
+    i0.\u0275\u0275elementStart(2, "a", 22);
+    i0.\u0275\u0275text(3, "Se connecter");
+    i0.\u0275\u0275elementEnd()();
+  }
+}
+function Compte_Conditional_31_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "p", 6);
+    i0.\u0275\u0275text(1);
+    i0.\u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r1 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275textInterpolate1("R\xF4le : ", ctx_r1.compte.role === "proprietaire" ? "Propri\xE9taire" : "Locataire", ". La modification du mot de passe n\xE9cessite un parcours d\xE9di\xE9 et reste indisponible.");
+  }
+}
+var Compte = class _Compte {
+  auth = inject(AuthService);
+  route = inject(ActivatedRoute);
+  router = inject(Router);
+  envoi = false;
+  mode = "connexion";
+  erreur = "";
+  succes = "";
+  motDePasse = "";
+  compte = { id: 0, nom: "", prenom: "", email: "", telephone: "", role: "locataire" };
+  ngOnInit() {
+    this.mode = this.route.snapshot.data["mode"];
+    if (this.mode === "profil" && this.auth.utilisateur)
+      this.compte = __spreadValues({}, this.auth.utilisateur);
+  }
+  envoyer(form) {
+    return __async(this, null, function* () {
+      this.erreur = this.succes = "";
+      if (form.invalid)
+        return;
+      if (this.mode !== "connexion" && (!this.compte.nom.trim() || !this.compte.prenom.trim())) {
+        this.erreur = "Le nom et le pr\xE9nom ne peuvent pas \xEAtre vides.";
+        return;
+      }
+      if (this.envoi)
+        return;
+      this.envoi = true;
+      try {
+        if (this.mode === "profil") {
+          yield this.auth.modifier(this.compte);
+          this.succes = "Votre profil a \xE9t\xE9 enregistr\xE9.";
+          return;
+        }
+        if (this.mode === "connexion")
+          yield this.auth.connecter(this.compte.email, this.motDePasse);
+        else
+          yield this.auth.inscrire(this.compte, this.motDePasse);
+        this.motDePasse = "";
+        const retour = this.route.snapshot.queryParamMap.get("retour");
+        if (retour?.startsWith("/") && !retour.startsWith("//"))
+          this.router.navigateByUrl(retour);
+        else
+          this.router.navigate([this.auth.utilisateur?.role === "proprietaire" ? "/proprietaire" : "/reservations"]);
+      } catch (e) {
+        this.erreur = messageErreur(e);
+      } finally {
+        this.envoi = false;
+        this.motDePasse = "";
+      }
+    });
+  }
+  static \u0275fac = function Compte_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _Compte)();
+  };
+  static \u0275cmp = /* @__PURE__ */ i0.\u0275\u0275defineComponent({ type: _Compte, selectors: [["ng-component"]], decls: 32, vars: 16, consts: [["form", "ngForm"], [1, "container", "section", "auth-layout"], [1, "auth-intro"], [1, "eyebrow"], ["src", "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85", "alt", "Int\xE9rieur accueillant"], [1, "panel"], [1, "notice"], ["role", "alert", 1, "error"], ["role", "status", 1, "success"], ["novalidate", "", 3, "ngSubmit"], [1, "form-grid"], ["type", "email", "name", "email", "required", "", "email", "", "autocomplete", "email", 3, "ngModelChange", "ngModel"], ["type", "submit", 1, "button", "full", 3, "disabled"], ["role", "status", 1, "notice"], ["name", "prenom", "required", "", "maxlength", "60", 3, "ngModelChange", "ngModel"], ["name", "nom", "required", "", "maxlength", "60", 3, "ngModelChange", "ngModel"], ["type", "tel", "name", "telephone", "required", "", "pattern", "[+0-9 ()-]{8,20}", "autocomplete", "tel", 3, "ngModelChange", "ngModel"], ["type", "password", "name", "motDePasse", "required", "", "autocomplete", "off", 3, "ngModelChange", "ngModel", "minlength"], ["name", "role", "required", "", 3, "ngModelChange", "ngModel"], ["value", "locataire"], ["value", "proprietaire"], ["routerLink", "/inscription", 1, "text-link"], ["routerLink", "/connexion", 1, "text-link"]], template: function Compte_Template(rf, ctx) {
+    if (rf & 1) {
+      const _r1 = i0.\u0275\u0275getCurrentView();
+      i0.\u0275\u0275elementStart(0, "section", 1)(1, "div", 2)(2, "p", 3);
+      i0.\u0275\u0275text(3, "BIENVENUE CHEZ DARNA");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(4, "h1");
+      i0.\u0275\u0275text(5);
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(6, "p");
+      i0.\u0275\u0275text(7, "Retrouvez vos logements pr\xE9f\xE9r\xE9s et g\xE9rez vos projets de location simplement.");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275element(8, "img", 4);
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(9, "div", 5)(10, "h2");
+      i0.\u0275\u0275text(11);
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(12, "p", 6);
+      i0.\u0275\u0275text(13, "Votre compte est enregistr\xE9 sur le serveur. La connexion utilise une session ; aucun mot de passe ne reste dans le navigateur.");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275conditionalCreate(14, Compte_Conditional_14_Template, 2, 1, "p", 7);
+      i0.\u0275\u0275conditionalCreate(15, Compte_Conditional_15_Template, 2, 1, "p", 8);
+      i0.\u0275\u0275elementStart(16, "form", 9, 0);
+      i0.\u0275\u0275listener("ngSubmit", function Compte_Template_form_ngSubmit_16_listener() {
+        i0.\u0275\u0275restoreView(_r1);
+        const form_r3 = i0.\u0275\u0275reference(17);
+        return i0.\u0275\u0275resetView(ctx.envoyer(form_r3));
+      });
+      i0.\u0275\u0275conditionalCreate(18, Compte_Conditional_18_Template, 7, 2, "div", 10);
+      i0.\u0275\u0275elementStart(19, "label");
+      i0.\u0275\u0275text(20, "Email");
+      i0.\u0275\u0275elementStart(21, "input", 11);
+      i0.\u0275\u0275twoWayListener("ngModelChange", function Compte_Template_input_ngModelChange_21_listener($event) {
+        i0.\u0275\u0275restoreView(_r1);
+        i0.\u0275\u0275twoWayBindingSet(ctx.compte.email, $event) || (ctx.compte.email = $event);
+        return i0.\u0275\u0275resetView($event);
+      });
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275conditionalCreate(22, Compte_Conditional_22_Template, 3, 1, "label");
+      i0.\u0275\u0275conditionalCreate(23, Compte_Conditional_23_Template, 3, 2, "label");
+      i0.\u0275\u0275conditionalCreate(24, Compte_Conditional_24_Template, 7, 1, "label");
+      i0.\u0275\u0275conditionalCreate(25, Compte_Conditional_25_Template, 2, 0, "p", 7);
+      i0.\u0275\u0275elementStart(26, "button", 12);
+      i0.\u0275\u0275text(27);
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275conditionalCreate(28, Compte_Conditional_28_Template, 2, 0, "p", 13);
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275conditionalCreate(29, Compte_Conditional_29_Template, 4, 0, "p");
+      i0.\u0275\u0275conditionalCreate(30, Compte_Conditional_30_Template, 4, 0, "p");
+      i0.\u0275\u0275conditionalCreate(31, Compte_Conditional_31_Template, 2, 1, "p", 6);
+      i0.\u0275\u0275elementEnd()();
+    }
+    if (rf & 2) {
+      const form_r3 = i0.\u0275\u0275reference(17);
+      i0.\u0275\u0275advance(5);
+      i0.\u0275\u0275textInterpolate(ctx.mode === "profil" ? "Votre espace, vos informations." : "Votre nouvelle histoire commence ici.");
+      i0.\u0275\u0275advance(6);
+      i0.\u0275\u0275textInterpolate(ctx.mode === "connexion" ? "Heureux de vous retrouver" : ctx.mode === "inscription" ? "Cr\xE9er mon compte" : "Mon profil");
+      i0.\u0275\u0275advance(3);
+      i0.\u0275\u0275conditional(ctx.erreur ? 14 : -1);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(ctx.succes ? 15 : -1);
+      i0.\u0275\u0275advance(3);
+      i0.\u0275\u0275conditional(ctx.mode !== "connexion" ? 18 : -1);
+      i0.\u0275\u0275advance(3);
+      i0.\u0275\u0275twoWayProperty("ngModel", ctx.compte.email);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(ctx.mode !== "connexion" ? 22 : -1);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(ctx.mode !== "profil" ? 23 : -1);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(ctx.mode === "inscription" ? 24 : -1);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(form_r3.submitted && form_r3.invalid ? 25 : -1);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275property("disabled", ctx.envoi);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275textInterpolate1("", ctx.mode === "connexion" ? "Se connecter" : ctx.mode === "inscription" ? "S'inscrire" : "Enregistrer les modifications", " \u2197");
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(ctx.envoi ? 28 : -1);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(ctx.mode === "connexion" ? 29 : -1);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(ctx.mode === "inscription" ? 30 : -1);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(ctx.mode === "profil" ? 31 : -1);
+    }
+  }, dependencies: [FormsModule, i1.\u0275NgNoValidate, i1.NgSelectOption, i1.\u0275NgSelectMultipleOption, i1.DefaultValueAccessor, i1.NumberValueAccessor, i1.RangeValueAccessor, i1.CheckboxControlValueAccessor, i1.SelectControlValueAccessor, i1.SelectMultipleControlValueAccessor, i1.RadioControlValueAccessor, i1.NgControlStatus, i1.NgControlStatusGroup, i1.RequiredValidator, i1.MinLengthValidator, i1.MaxLengthValidator, i1.PatternValidator, i1.CheckboxRequiredValidator, i1.EmailValidator, i1.MinValidator, i1.MaxValidator, i1.NgModel, i1.NgModelGroup, i1.NgForm, RouterLink], encapsulation: 2 });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassMetadata(Compte, [{
+    type: Component,
+    args: [{ imports: [FormsModule, RouterLink], template: `
+  <section class="container section auth-layout"><div class="auth-intro"><p class="eyebrow">BIENVENUE CHEZ DARNA</p><h1>{{mode === 'profil' ? 'Votre espace, vos informations.' : 'Votre nouvelle histoire commence ici.'}}</h1><p>Retrouvez vos logements pr\xE9f\xE9r\xE9s et g\xE9rez vos projets de location simplement.</p><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=85" alt="Int\xE9rieur accueillant"></div>
+  <div class="panel"><h2>{{mode === 'connexion' ? 'Heureux de vous retrouver' : mode === 'inscription' ? 'Cr\xE9er mon compte' : 'Mon profil'}}</h2>
+  <p class="notice">Votre compte est enregistr\xE9 sur le serveur. La connexion utilise une session ; aucun mot de passe ne reste dans le navigateur.</p>
+  @if (erreur) { <p class="error" role="alert">{{erreur}}</p> } @if (succes) { <p class="success" role="status">{{succes}}</p> }
+  <form #form="ngForm" (ngSubmit)="envoyer(form)" novalidate>
+  @if (mode !== 'connexion') { <div class="form-grid"><label>Pr\xE9nom<input name="prenom" [(ngModel)]="compte.prenom" required maxlength="60"></label><label>Nom<input name="nom" [(ngModel)]="compte.nom" required maxlength="60"></label></div> }
+  <label>Email<input type="email" name="email" [(ngModel)]="compte.email" required email autocomplete="email"></label>
+  @if (mode !== 'connexion') { <label>T\xE9l\xE9phone<input type="tel" name="telephone" [(ngModel)]="compte.telephone" required pattern="[+0-9 ()-]{8,20}" autocomplete="tel"></label> }
+  @if (mode !== 'profil') { <label>Mot de passe<input type="password" name="motDePasse" [(ngModel)]="motDePasse" required [minlength]="mode === 'inscription' ? 6 : 1" autocomplete="off"></label> }
+  @if (mode === 'inscription') { <label>Je suis<select name="role" [(ngModel)]="compte.role" required><option value="locataire">Locataire</option><option value="proprietaire">Propri\xE9taire</option></select></label> }
+  @if (form.submitted && form.invalid) { <p class="error" role="alert">V\xE9rifiez les champs : email valide, t\xE9l\xE9phone de 8 \xE0 20 caract\xE8res et, \xE0 l'inscription, mot de passe de 6 caract\xE8res minimum.</p> }
+  <button class="button full" type="submit" [disabled]="envoi">{{mode === 'connexion' ? 'Se connecter' : mode === 'inscription' ? "S'inscrire" : 'Enregistrer les modifications'}} \u2197</button>@if (envoi) { <p class="notice" role="status">Enregistrement en cours\u2026</p> }</form>
+  @if (mode === 'connexion') { <p>Pas encore de compte ? <a class="text-link" routerLink="/inscription">S'inscrire</a></p> }
+  @if (mode === 'inscription') { <p>D\xE9j\xE0 un compte ? <a class="text-link" routerLink="/connexion">Se connecter</a></p> }
+  @if (mode === 'profil') { <p class="notice">R\xF4le : {{compte.role === 'proprietaire' ? 'Propri\xE9taire' : 'Locataire'}}. La modification du mot de passe n\xE9cessite un parcours d\xE9di\xE9 et reste indisponible.</p> }
+  </div></section>` }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassDebugInfo(Compte, { className: "Compte", filePath: "app/pages/compte.ts", lineNumber: 24 });
+})();
+(() => {
+  const id = "app%2Fpages%2Fcompte.ts%40Compte";
+  function Compte_HmrLoad(t) {
+    import(
+      /* @vite-ignore */
+      __vite__injectQuery(i0.\u0275\u0275getReplaceMetadataURL(id, t, import.meta.url), 'import')
+    ).then((m) => m.default && i0.\u0275\u0275replaceMetadata(Compte, m.default, [i0, i1], [FormsModule, RouterLink, Component], import.meta, id));
+  }
+  (typeof ngDevMode === "undefined" || ngDevMode) && Compte_HmrLoad(Date.now());
+  (typeof ngDevMode === "undefined" || ngDevMode) && (import.meta.hot && import.meta.hot.on("angular:component-update", (d) => d.id === id && Compte_HmrLoad(d.timestamp)));
+})();
+export {
+  Compte
+};
+
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvY29tcHRlLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgaW5qZWN0LCBPbkluaXQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcclxuaW1wb3J0IHsgRm9ybXNNb2R1bGUsIE5nRm9ybSB9IGZyb20gJ0Bhbmd1bGFyL2Zvcm1zJztcclxuaW1wb3J0IHsgQWN0aXZhdGVkUm91dGUsIFJvdXRlciwgUm91dGVyTGluayB9IGZyb20gJ0Bhbmd1bGFyL3JvdXRlcic7XHJcbmltcG9ydCB7IEF1dGhTZXJ2aWNlIH0gZnJvbSAnLi4vc2VydmljZXMvYXV0aC5zZXJ2aWNlJztcclxuaW1wb3J0IHsgbWVzc2FnZUVycmV1ciB9IGZyb20gJy4uL3NlcnZpY2VzL2FwaS1lcnJvcic7XHJcbmltcG9ydCB7IFV0aWxpc2F0ZXVyIH0gZnJvbSAnLi4vbW9kZWxzL21vZGVscyc7XHJcbkBDb21wb25lbnQoeyBpbXBvcnRzOiBbRm9ybXNNb2R1bGUsIFJvdXRlckxpbmtdLCB0ZW1wbGF0ZTogYFxyXG4gIDxzZWN0aW9uIGNsYXNzPVwiY29udGFpbmVyIHNlY3Rpb24gYXV0aC1sYXlvdXRcIj48ZGl2IGNsYXNzPVwiYXV0aC1pbnRyb1wiPjxwIGNsYXNzPVwiZXllYnJvd1wiPkJJRU5WRU5VRSBDSEVaIERBUk5BPC9wPjxoMT57e21vZGUgPT09ICdwcm9maWwnID8gJ1ZvdHJlIGVzcGFjZSwgdm9zIGluZm9ybWF0aW9ucy4nIDogJ1ZvdHJlIG5vdXZlbGxlIGhpc3RvaXJlIGNvbW1lbmNlIGljaS4nfX08L2gxPjxwPlJldHJvdXZleiB2b3MgbG9nZW1lbnRzIHByw6lmw6lyw6lzIGV0IGfDqXJleiB2b3MgcHJvamV0cyBkZSBsb2NhdGlvbiBzaW1wbGVtZW50LjwvcD48aW1nIHNyYz1cImh0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9waG90by0xNjAwNjA3Njg3OTIwLTRlMmEwOWNmMTU5ZD9hdXRvPWZvcm1hdCZmaXQ9Y3JvcCZ3PTkwMCZxPTg1XCIgYWx0PVwiSW50w6lyaWV1ciBhY2N1ZWlsbGFudFwiPjwvZGl2PlxyXG4gIDxkaXYgY2xhc3M9XCJwYW5lbFwiPjxoMj57e21vZGUgPT09ICdjb25uZXhpb24nID8gJ0hldXJldXggZGUgdm91cyByZXRyb3V2ZXInIDogbW9kZSA9PT0gJ2luc2NyaXB0aW9uJyA/ICdDcsOpZXIgbW9uIGNvbXB0ZScgOiAnTW9uIHByb2ZpbCd9fTwvaDI+XHJcbiAgPHAgY2xhc3M9XCJub3RpY2VcIj5Wb3RyZSBjb21wdGUgZXN0IGVucmVnaXN0csOpIHN1ciBsZSBzZXJ2ZXVyLiBMYSBjb25uZXhpb24gdXRpbGlzZSB1bmUgc2Vzc2lvbiA7IGF1Y3VuIG1vdCBkZSBwYXNzZSBuZSByZXN0ZSBkYW5zIGxlIG5hdmlnYXRldXIuPC9wPlxyXG4gIEBpZiAoZXJyZXVyKSB7IDxwIGNsYXNzPVwiZXJyb3JcIiByb2xlPVwiYWxlcnRcIj57e2VycmV1cn19PC9wPiB9IEBpZiAoc3VjY2VzKSB7IDxwIGNsYXNzPVwic3VjY2Vzc1wiIHJvbGU9XCJzdGF0dXNcIj57e3N1Y2Nlc319PC9wPiB9XHJcbiAgPGZvcm0gI2Zvcm09XCJuZ0Zvcm1cIiAobmdTdWJtaXQpPVwiZW52b3llcihmb3JtKVwiIG5vdmFsaWRhdGU+XHJcbiAgQGlmIChtb2RlICE9PSAnY29ubmV4aW9uJykgeyA8ZGl2IGNsYXNzPVwiZm9ybS1ncmlkXCI+PGxhYmVsPlByw6lub208aW5wdXQgbmFtZT1cInByZW5vbVwiIFsobmdNb2RlbCldPVwiY29tcHRlLnByZW5vbVwiIHJlcXVpcmVkIG1heGxlbmd0aD1cIjYwXCI+PC9sYWJlbD48bGFiZWw+Tm9tPGlucHV0IG5hbWU9XCJub21cIiBbKG5nTW9kZWwpXT1cImNvbXB0ZS5ub21cIiByZXF1aXJlZCBtYXhsZW5ndGg9XCI2MFwiPjwvbGFiZWw+PC9kaXY+IH1cclxuICA8bGFiZWw+RW1haWw8aW5wdXQgdHlwZT1cImVtYWlsXCIgbmFtZT1cImVtYWlsXCIgWyhuZ01vZGVsKV09XCJjb21wdGUuZW1haWxcIiByZXF1aXJlZCBlbWFpbCBhdXRvY29tcGxldGU9XCJlbWFpbFwiPjwvbGFiZWw+XHJcbiAgQGlmIChtb2RlICE9PSAnY29ubmV4aW9uJykgeyA8bGFiZWw+VMOpbMOpcGhvbmU8aW5wdXQgdHlwZT1cInRlbFwiIG5hbWU9XCJ0ZWxlcGhvbmVcIiBbKG5nTW9kZWwpXT1cImNvbXB0ZS50ZWxlcGhvbmVcIiByZXF1aXJlZCBwYXR0ZXJuPVwiWyswLTkgKCktXXs4LDIwfVwiIGF1dG9jb21wbGV0ZT1cInRlbFwiPjwvbGFiZWw+IH1cclxuICBAaWYgKG1vZGUgIT09ICdwcm9maWwnKSB7IDxsYWJlbD5Nb3QgZGUgcGFzc2U8aW5wdXQgdHlwZT1cInBhc3N3b3JkXCIgbmFtZT1cIm1vdERlUGFzc2VcIiBbKG5nTW9kZWwpXT1cIm1vdERlUGFzc2VcIiByZXF1aXJlZCBbbWlubGVuZ3RoXT1cIm1vZGUgPT09ICdpbnNjcmlwdGlvbicgPyA2IDogMVwiIGF1dG9jb21wbGV0ZT1cIm9mZlwiPjwvbGFiZWw+IH1cclxuICBAaWYgKG1vZGUgPT09ICdpbnNjcmlwdGlvbicpIHsgPGxhYmVsPkplIHN1aXM8c2VsZWN0IG5hbWU9XCJyb2xlXCIgWyhuZ01vZGVsKV09XCJjb21wdGUucm9sZVwiIHJlcXVpcmVkPjxvcHRpb24gdmFsdWU9XCJsb2NhdGFpcmVcIj5Mb2NhdGFpcmU8L29wdGlvbj48b3B0aW9uIHZhbHVlPVwicHJvcHJpZXRhaXJlXCI+UHJvcHJpw6l0YWlyZTwvb3B0aW9uPjwvc2VsZWN0PjwvbGFiZWw+IH1cclxuICBAaWYgKGZvcm0uc3VibWl0dGVkICYmIGZvcm0uaW52YWxpZCkgeyA8cCBjbGFzcz1cImVycm9yXCIgcm9sZT1cImFsZXJ0XCI+VsOpcmlmaWV6IGxlcyBjaGFtcHMgOiBlbWFpbCB2YWxpZGUsIHTDqWzDqXBob25lIGRlIDggw6AgMjAgY2FyYWN0w6hyZXMgZXQsIMOgIGwnaW5zY3JpcHRpb24sIG1vdCBkZSBwYXNzZSBkZSA2IGNhcmFjdMOocmVzIG1pbmltdW0uPC9wPiB9XHJcbiAgPGJ1dHRvbiBjbGFzcz1cImJ1dHRvbiBmdWxsXCIgdHlwZT1cInN1Ym1pdFwiIFtkaXNhYmxlZF09XCJlbnZvaVwiPnt7bW9kZSA9PT0gJ2Nvbm5leGlvbicgPyAnU2UgY29ubmVjdGVyJyA6IG1vZGUgPT09ICdpbnNjcmlwdGlvbicgPyBcIlMnaW5zY3JpcmVcIiA6ICdFbnJlZ2lzdHJlciBsZXMgbW9kaWZpY2F0aW9ucyd9fSDihpc8L2J1dHRvbj5AaWYgKGVudm9pKSB7IDxwIGNsYXNzPVwibm90aWNlXCIgcm9sZT1cInN0YXR1c1wiPkVucmVnaXN0cmVtZW50IGVuIGNvdXJz4oCmPC9wPiB9PC9mb3JtPlxyXG4gIEBpZiAobW9kZSA9PT0gJ2Nvbm5leGlvbicpIHsgPHA+UGFzIGVuY29yZSBkZSBjb21wdGUgPyA8YSBjbGFzcz1cInRleHQtbGlua1wiIHJvdXRlckxpbms9XCIvaW5zY3JpcHRpb25cIj5TJ2luc2NyaXJlPC9hPjwvcD4gfVxyXG4gIEBpZiAobW9kZSA9PT0gJ2luc2NyaXB0aW9uJykgeyA8cD5Ew6lqw6AgdW4gY29tcHRlID8gPGEgY2xhc3M9XCJ0ZXh0LWxpbmtcIiByb3V0ZXJMaW5rPVwiL2Nvbm5leGlvblwiPlNlIGNvbm5lY3RlcjwvYT48L3A+IH1cclxuICBAaWYgKG1vZGUgPT09ICdwcm9maWwnKSB7IDxwIGNsYXNzPVwibm90aWNlXCI+UsO0bGUgOiB7e2NvbXB0ZS5yb2xlID09PSAncHJvcHJpZXRhaXJlJyA/ICdQcm9wcmnDqXRhaXJlJyA6ICdMb2NhdGFpcmUnfX0uIExhIG1vZGlmaWNhdGlvbiBkdSBtb3QgZGUgcGFzc2UgbsOpY2Vzc2l0ZSB1biBwYXJjb3VycyBkw6lkacOpIGV0IHJlc3RlIGluZGlzcG9uaWJsZS48L3A+IH1cclxuICA8L2Rpdj48L3NlY3Rpb24+YCB9KVxyXG5leHBvcnQgY2xhc3MgQ29tcHRlIGltcGxlbWVudHMgT25Jbml0IHtcclxuICBhdXRoID0gaW5qZWN0KEF1dGhTZXJ2aWNlKTsgcm91dGUgPSBpbmplY3QoQWN0aXZhdGVkUm91dGUpOyByb3V0ZXIgPSBpbmplY3QoUm91dGVyKTtcclxuICBlbnZvaSA9IGZhbHNlOyBtb2RlID0gJ2Nvbm5leGlvbic7IGVycmV1ciA9ICcnOyBzdWNjZXMgPSAnJzsgbW90RGVQYXNzZSA9ICcnO1xyXG4gIGNvbXB0ZTogVXRpbGlzYXRldXIgPSB7IGlkOiAwLCBub206ICcnLCBwcmVub206ICcnLCBlbWFpbDogJycsIHRlbGVwaG9uZTogJycsIHJvbGU6ICdsb2NhdGFpcmUnIH07XHJcbiAgbmdPbkluaXQoKTogdm9pZCB7IHRoaXMubW9kZSA9IHRoaXMucm91dGUuc25hcHNob3QuZGF0YVsnbW9kZSddOyBpZiAodGhpcy5tb2RlID09PSAncHJvZmlsJyAmJiB0aGlzLmF1dGgudXRpbGlzYXRldXIpIHRoaXMuY29tcHRlID0geyAuLi50aGlzLmF1dGgudXRpbGlzYXRldXIgfTsgfVxyXG4gIGFzeW5jIGVudm95ZXIoZm9ybTogTmdGb3JtKTogUHJvbWlzZTx2b2lkPiB7XHJcbiAgICB0aGlzLmVycmV1ciA9IHRoaXMuc3VjY2VzID0gJyc7IGlmIChmb3JtLmludmFsaWQpIHJldHVybjtcclxuICAgIGlmICh0aGlzLm1vZGUgIT09ICdjb25uZXhpb24nICYmICghdGhpcy5jb21wdGUubm9tLnRyaW0oKSB8fCAhdGhpcy5jb21wdGUucHJlbm9tLnRyaW0oKSkpIHsgdGhpcy5lcnJldXIgPSAnTGUgbm9tIGV0IGxlIHByw6lub20gbmUgcGV1dmVudCBwYXMgw6p0cmUgdmlkZXMuJzsgcmV0dXJuOyB9XHJcbiAgICBpZiAodGhpcy5lbnZvaSkgcmV0dXJuOyB0aGlzLmVudm9pID0gdHJ1ZTtcclxuICAgIHRyeSB7XHJcbiAgICBpZiAodGhpcy5tb2RlID09PSAncHJvZmlsJykgeyBhd2FpdCB0aGlzLmF1dGgubW9kaWZpZXIodGhpcy5jb21wdGUpOyB0aGlzLnN1Y2NlcyA9ICdWb3RyZSBwcm9maWwgYSDDqXTDqSBlbnJlZ2lzdHLDqS4nOyByZXR1cm47IH1cclxuICAgIGlmICh0aGlzLm1vZGUgPT09ICdjb25uZXhpb24nKSBhd2FpdCB0aGlzLmF1dGguY29ubmVjdGVyKHRoaXMuY29tcHRlLmVtYWlsLCB0aGlzLm1vdERlUGFzc2UpO1xyXG4gICAgZWxzZSBhd2FpdCB0aGlzLmF1dGguaW5zY3JpcmUodGhpcy5jb21wdGUsIHRoaXMubW90RGVQYXNzZSk7XHJcbiAgICB0aGlzLm1vdERlUGFzc2UgPSAnJztcclxuICAgIGNvbnN0IHJldG91ciA9IHRoaXMucm91dGUuc25hcHNob3QucXVlcnlQYXJhbU1hcC5nZXQoJ3JldG91cicpO1xyXG4gICAgaWYgKHJldG91cj8uc3RhcnRzV2l0aCgnLycpICYmICFyZXRvdXIuc3RhcnRzV2l0aCgnLy8nKSkgdGhpcy5yb3V0ZXIubmF2aWdhdGVCeVVybChyZXRvdXIpO1xyXG4gICAgZWxzZSB0aGlzLnJvdXRlci5uYXZpZ2F0ZShbdGhpcy5hdXRoLnV0aWxpc2F0ZXVyPy5yb2xlID09PSAncHJvcHJpZXRhaXJlJyA/ICcvcHJvcHJpZXRhaXJlJyA6ICcvcmVzZXJ2YXRpb25zJ10pO1xyXG4gICAgfSBjYXRjaCAoZSkgeyB0aGlzLmVycmV1ciA9IG1lc3NhZ2VFcnJldXIoZSk7IH0gZmluYWxseSB7IHRoaXMuZW52b2kgPSBmYWxzZTsgdGhpcy5tb3REZVBhc3NlID0gJyc7IH1cclxuICB9XHJcbn1cclxuIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFBQSxTQUFTLFdBQVcsY0FBc0I7QUFDMUMsU0FBUyxtQkFBMkI7QUFDcEMsU0FBUyxnQkFBZ0IsUUFBUSxrQkFBa0I7QTs7OztBQVFsQyxJQUFBLDRCQUFBLEdBQUEsS0FBQSxDQUFBO0FBQThCLElBQUEsb0JBQUEsQ0FBQTtBQUFVLElBQUEsMEJBQUE7Ozs7QUFBVixJQUFBLHVCQUFBO0FBQUEsSUFBQSwrQkFBQSxPQUFBLE1BQUE7Ozs7O0FBQWdDLElBQUEsNEJBQUEsR0FBQSxLQUFBLENBQUE7QUFBaUMsSUFBQSxvQkFBQSxDQUFBO0FBQVUsSUFBQSwwQkFBQTs7OztBQUFWLElBQUEsdUJBQUE7QUFBQSxJQUFBLCtCQUFBLE9BQUEsTUFBQTs7Ozs7O0FBRWpGLElBQUEsNEJBQUEsR0FBQSxPQUFBLEVBQUEsRUFBdUIsR0FBQSxPQUFBO0FBQU8sSUFBQSxvQkFBQSxHQUFBLFdBQUE7QUFBTSxJQUFBLDRCQUFBLEdBQUEsU0FBQSxFQUFBO0FBQXFCLElBQUEsOEJBQUEsaUJBQUEsU0FBQSw4REFBQSxRQUFBO0FBQUEsTUFBQSwyQkFBQSxHQUFBO0FBQUEsWUFBQSxTQUFBLDJCQUFBO0FBQUEsTUFBQSxnQ0FBQSxPQUFBLE9BQUEsUUFBQSxNQUFBLE1BQUEsT0FBQSxPQUFBLFNBQUE7QUFBQSxhQUFBLHlCQUFBLE1BQUE7SUFBQSxDQUFBO0FBQXJCLElBQUEsMEJBQUEsRUFBeUU7QUFBUSxJQUFBLDRCQUFBLEdBQUEsT0FBQTtBQUFPLElBQUEsb0JBQUEsR0FBQSxLQUFBO0FBQUcsSUFBQSw0QkFBQSxHQUFBLFNBQUEsRUFBQTtBQUFrQixJQUFBLDhCQUFBLGlCQUFBLFNBQUEsOERBQUEsUUFBQTtBQUFBLE1BQUEsMkJBQUEsR0FBQTtBQUFBLFlBQUEsU0FBQSwyQkFBQTtBQUFBLE1BQUEsZ0NBQUEsT0FBQSxPQUFBLEtBQUEsTUFBQSxNQUFBLE9BQUEsT0FBQSxNQUFBO0FBQUEsYUFBQSx5QkFBQSxNQUFBO0lBQUEsQ0FBQTtBQUFsQixJQUFBLDBCQUFBLEVBQW1FLEVBQVE7Ozs7QUFBakosSUFBQSx1QkFBQSxDQUFBO0FBQUEsSUFBQSw4QkFBQSxXQUFBLE9BQUEsT0FBQSxNQUFBO0FBQXdGLElBQUEsdUJBQUEsQ0FBQTtBQUFBLElBQUEsOEJBQUEsV0FBQSxPQUFBLE9BQUEsR0FBQTs7Ozs7O0FBRWpKLElBQUEsNEJBQUEsR0FBQSxPQUFBO0FBQU8sSUFBQSxvQkFBQSxHQUFBLGlCQUFBO0FBQVMsSUFBQSw0QkFBQSxHQUFBLFNBQUEsRUFBQTtBQUFtQyxJQUFBLDhCQUFBLGlCQUFBLFNBQUEsOERBQUEsUUFBQTtBQUFBLE1BQUEsMkJBQUEsR0FBQTtBQUFBLFlBQUEsU0FBQSwyQkFBQTtBQUFBLE1BQUEsZ0NBQUEsT0FBQSxPQUFBLFdBQUEsTUFBQSxNQUFBLE9BQUEsT0FBQSxZQUFBO0FBQUEsYUFBQSx5QkFBQSxNQUFBO0lBQUEsQ0FBQTtBQUFuQyxJQUFBLDBCQUFBLEVBQXlIOzs7O0FBQXRGLElBQUEsdUJBQUEsQ0FBQTtBQUFBLElBQUEsOEJBQUEsV0FBQSxPQUFBLE9BQUEsU0FBQTs7Ozs7O0FBQ3RELElBQUEsNEJBQUEsR0FBQSxPQUFBO0FBQU8sSUFBQSxvQkFBQSxHQUFBLGNBQUE7QUFBWSxJQUFBLDRCQUFBLEdBQUEsU0FBQSxFQUFBO0FBQXlDLElBQUEsOEJBQUEsaUJBQUEsU0FBQSw4REFBQSxRQUFBO0FBQUEsTUFBQSwyQkFBQSxHQUFBO0FBQUEsWUFBQSxTQUFBLDJCQUFBO0FBQUEsTUFBQSxnQ0FBQSxPQUFBLFlBQUEsTUFBQSxNQUFBLE9BQUEsYUFBQTtBQUFBLGFBQUEseUJBQUEsTUFBQTtJQUFBLENBQUE7QUFBekMsSUFBQSwwQkFBQSxFQUEySTs7OztBQUFsRyxJQUFBLHVCQUFBLENBQUE7QUFBQSxJQUFBLDhCQUFBLFdBQUEsT0FBQSxVQUFBO0FBQWtDLElBQUEsd0JBQUEsYUFBQSxPQUFBLFNBQUEsZ0JBQUEsSUFBQSxDQUFBOzs7Ozs7QUFDekYsSUFBQSw0QkFBQSxHQUFBLE9BQUE7QUFBTyxJQUFBLG9CQUFBLEdBQUEsU0FBQTtBQUFPLElBQUEsNEJBQUEsR0FBQSxVQUFBLEVBQUE7QUFBb0IsSUFBQSw4QkFBQSxpQkFBQSxTQUFBLCtEQUFBLFFBQUE7QUFBQSxNQUFBLDJCQUFBLEdBQUE7QUFBQSxZQUFBLFNBQUEsMkJBQUE7QUFBQSxNQUFBLGdDQUFBLE9BQUEsT0FBQSxNQUFBLE1BQUEsTUFBQSxPQUFBLE9BQUEsT0FBQTtBQUFBLGFBQUEseUJBQUEsTUFBQTtJQUFBLENBQUE7QUFBbUMsSUFBQSw0QkFBQSxHQUFBLFVBQUEsRUFBQTtBQUEwQixJQUFBLG9CQUFBLEdBQUEsV0FBQTtBQUFTLElBQUEsMEJBQUE7QUFBUyxJQUFBLDRCQUFBLEdBQUEsVUFBQSxFQUFBO0FBQTZCLElBQUEsb0JBQUEsR0FBQSxpQkFBQTtBQUFZLElBQUEsMEJBQUEsRUFBUyxFQUFTOzs7O0FBQTFJLElBQUEsdUJBQUEsQ0FBQTtBQUFBLElBQUEsOEJBQUEsV0FBQSxPQUFBLE9BQUEsSUFBQTs7Ozs7QUFDMUIsSUFBQSw0QkFBQSxHQUFBLEtBQUEsQ0FBQTtBQUE4QixJQUFBLG9CQUFBLEdBQUEsb0pBQUE7QUFBNkgsSUFBQSwwQkFBQTs7Ozs7QUFDTyxJQUFBLDRCQUFBLEdBQUEsS0FBQSxFQUFBO0FBQWdDLElBQUEsb0JBQUEsR0FBQSwrQkFBQTtBQUF3QixJQUFBLDBCQUFBOzs7OztBQUNwTyxJQUFBLDRCQUFBLEdBQUEsR0FBQTtBQUFHLElBQUEsb0JBQUEsR0FBQSx5QkFBQTtBQUF1QixJQUFBLDRCQUFBLEdBQUEsS0FBQSxFQUFBO0FBQStDLElBQUEsb0JBQUEsR0FBQSxZQUFBO0FBQVUsSUFBQSwwQkFBQSxFQUFJOzs7OztBQUNyRixJQUFBLDRCQUFBLEdBQUEsR0FBQTtBQUFHLElBQUEsb0JBQUEsR0FBQSx5QkFBQTtBQUFpQixJQUFBLDRCQUFBLEdBQUEsS0FBQSxFQUFBO0FBQTZDLElBQUEsb0JBQUEsR0FBQSxjQUFBO0FBQVksSUFBQSwwQkFBQSxFQUFJOzs7OztBQUN0RixJQUFBLDRCQUFBLEdBQUEsS0FBQSxDQUFBO0FBQWtCLElBQUEsb0JBQUEsQ0FBQTtBQUE0SixJQUFBLDBCQUFBOzs7O0FBQTVKLElBQUEsdUJBQUE7QUFBQSxJQUFBLGdDQUFBLGNBQUEsT0FBQSxPQUFBLFNBQUEsaUJBQUEsb0JBQUEsYUFBQSwrRkFBQTs7O0FBRXhDLElBQU8sU0FBUCxNQUFPLFFBQU07RUFDakIsT0FBTyxPQUFPLFdBQVc7RUFBRyxRQUFRLE9BQU8sY0FBYztFQUFHLFNBQVMsT0FBTyxNQUFNO0VBQ2xGLFFBQVE7RUFBTyxPQUFPO0VBQWEsU0FBUztFQUFJLFNBQVM7RUFBSSxhQUFhO0VBQzFFLFNBQXNCLEVBQUUsSUFBSSxHQUFHLEtBQUssSUFBSSxRQUFRLElBQUksT0FBTyxJQUFJLFdBQVcsSUFBSSxNQUFNLFlBQVc7RUFDL0YsV0FBUTtBQUFXLFNBQUssT0FBTyxLQUFLLE1BQU0sU0FBUyxLQUFLLE1BQU07QUFBRyxRQUFJLEtBQUssU0FBUyxZQUFZLEtBQUssS0FBSztBQUFhLFdBQUssU0FBUyxtQkFBSyxLQUFLLEtBQUs7RUFBZTtFQUM1SixRQUFRLE1BQVk7O0FBQ3hCLFdBQUssU0FBUyxLQUFLLFNBQVM7QUFBSSxVQUFJLEtBQUs7QUFBUztBQUNsRCxVQUFJLEtBQUssU0FBUyxnQkFBZ0IsQ0FBQyxLQUFLLE9BQU8sSUFBSSxLQUFJLEtBQU0sQ0FBQyxLQUFLLE9BQU8sT0FBTyxLQUFJLElBQUs7QUFBRSxhQUFLLFNBQVM7QUFBa0Q7TUFBUTtBQUNwSyxVQUFJLEtBQUs7QUFBTztBQUFRLFdBQUssUUFBUTtBQUNyQyxVQUFJO0FBQ0osWUFBSSxLQUFLLFNBQVMsVUFBVTtBQUFFLGdCQUFNLEtBQUssS0FBSyxTQUFTLEtBQUssTUFBTTtBQUFHLGVBQUssU0FBUztBQUFrQztRQUFRO0FBQzdILFlBQUksS0FBSyxTQUFTO0FBQWEsZ0JBQU0sS0FBSyxLQUFLLFVBQVUsS0FBSyxPQUFPLE9BQU8sS0FBSyxVQUFVOztBQUN0RixnQkFBTSxLQUFLLEtBQUssU0FBUyxLQUFLLFFBQVEsS0FBSyxVQUFVO0FBQzFELGFBQUssYUFBYTtBQUNsQixjQUFNLFNBQVMsS0FBSyxNQUFNLFNBQVMsY0FBYyxJQUFJLFFBQVE7QUFDN0QsWUFBSSxRQUFRLFdBQVcsR0FBRyxLQUFLLENBQUMsT0FBTyxXQUFXLElBQUk7QUFBRyxlQUFLLE9BQU8sY0FBYyxNQUFNOztBQUNwRixlQUFLLE9BQU8sU0FBUyxDQUFDLEtBQUssS0FBSyxhQUFhLFNBQVMsaUJBQWlCLGtCQUFrQixlQUFlLENBQUM7TUFDOUcsU0FBUyxHQUFHO0FBQUUsYUFBSyxTQUFTLGNBQWMsQ0FBQztNQUFHO0FBQVksYUFBSyxRQUFRO0FBQU8sYUFBSyxhQUFhO01BQUk7SUFDdEc7OztxQ0FsQlcsU0FBTTtFQUFBOzRFQUFOLFNBQU0sV0FBQSxDQUFBLENBQUEsY0FBQSxDQUFBLEdBQUEsT0FBQSxJQUFBLE1BQUEsSUFBQSxRQUFBLENBQUEsQ0FBQSxRQUFBLFFBQUEsR0FBQSxDQUFBLEdBQUEsYUFBQSxXQUFBLGFBQUEsR0FBQSxDQUFBLEdBQUEsWUFBQSxHQUFBLENBQUEsR0FBQSxTQUFBLEdBQUEsQ0FBQSxPQUFBLGdHQUFBLE9BQUEsMEJBQUEsR0FBQSxDQUFBLEdBQUEsT0FBQSxHQUFBLENBQUEsR0FBQSxRQUFBLEdBQUEsQ0FBQSxRQUFBLFNBQUEsR0FBQSxPQUFBLEdBQUEsQ0FBQSxRQUFBLFVBQUEsR0FBQSxTQUFBLEdBQUEsQ0FBQSxjQUFBLElBQUEsR0FBQSxVQUFBLEdBQUEsQ0FBQSxHQUFBLFdBQUEsR0FBQSxDQUFBLFFBQUEsU0FBQSxRQUFBLFNBQUEsWUFBQSxJQUFBLFNBQUEsSUFBQSxnQkFBQSxTQUFBLEdBQUEsaUJBQUEsU0FBQSxHQUFBLENBQUEsUUFBQSxVQUFBLEdBQUEsVUFBQSxRQUFBLEdBQUEsVUFBQSxHQUFBLENBQUEsUUFBQSxVQUFBLEdBQUEsUUFBQSxHQUFBLENBQUEsUUFBQSxVQUFBLFlBQUEsSUFBQSxhQUFBLE1BQUEsR0FBQSxpQkFBQSxTQUFBLEdBQUEsQ0FBQSxRQUFBLE9BQUEsWUFBQSxJQUFBLGFBQUEsTUFBQSxHQUFBLGlCQUFBLFNBQUEsR0FBQSxDQUFBLFFBQUEsT0FBQSxRQUFBLGFBQUEsWUFBQSxJQUFBLFdBQUEsb0JBQUEsZ0JBQUEsT0FBQSxHQUFBLGlCQUFBLFNBQUEsR0FBQSxDQUFBLFFBQUEsWUFBQSxRQUFBLGNBQUEsWUFBQSxJQUFBLGdCQUFBLE9BQUEsR0FBQSxpQkFBQSxXQUFBLFdBQUEsR0FBQSxDQUFBLFFBQUEsUUFBQSxZQUFBLElBQUEsR0FBQSxpQkFBQSxTQUFBLEdBQUEsQ0FBQSxTQUFBLFdBQUEsR0FBQSxDQUFBLFNBQUEsY0FBQSxHQUFBLENBQUEsY0FBQSxnQkFBQSxHQUFBLFdBQUEsR0FBQSxDQUFBLGNBQUEsY0FBQSxHQUFB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

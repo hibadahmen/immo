@@ -1,0 +1,266 @@
+import { injectQuery as __vite__injectQuery } from "/@vite/client";import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/chunk-7B6GV3BS.js");import {
+  Bouton
+} from "/chunk-DEWOSBYM.js";
+import {
+  __spreadProps,
+  __spreadValues
+} from "/chunk-VUJOFXKG.js";
+
+// src/app/components/filtres-logements.ts
+import { Component, EventEmitter, Input, Output } from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache/20.3.37/frontend-immo/vite/deps/@angular_core.js?v=a5b53bef";
+import { FormsModule } from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache/20.3.37/frontend-immo/vite/deps/@angular_forms.js?v=a5b53bef";
+import * as i0 from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache/20.3.37/frontend-immo/vite/deps/@angular_core.js?v=a5b53bef";
+import * as i1 from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache/20.3.37/frontend-immo/vite/deps/@angular_forms.js?v=a5b53bef";
+var _c0 = () => [1, 2, 3, 4, 5, 6];
+function FiltresLogements_Conditional_20_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r3 = i0.\u0275\u0275getCurrentView();
+    i0.\u0275\u0275elementStart(0, "label")(1, "span");
+    i0.\u0275\u0275text(2, "Budget minimum (DT)");
+    i0.\u0275\u0275elementEnd();
+    i0.\u0275\u0275elementStart(3, "input", 10);
+    i0.\u0275\u0275twoWayListener("ngModelChange", function FiltresLogements_Conditional_20_Template_input_ngModelChange_3_listener($event) {
+      i0.\u0275\u0275restoreView(_r3);
+      const ctx_r3 = i0.\u0275\u0275nextContext();
+      i0.\u0275\u0275twoWayBindingSet(ctx_r3.criteres.min, $event) || (ctx_r3.criteres.min = $event);
+      return i0.\u0275\u0275resetView($event);
+    });
+    i0.\u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r3 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance(3);
+    i0.\u0275\u0275twoWayProperty("ngModel", ctx_r3.criteres.min);
+  }
+}
+function FiltresLogements_Conditional_25_For_7_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "option", 12);
+    i0.\u0275\u0275text(1);
+    i0.\u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const n_r6 = ctx.$implicit;
+    i0.\u0275\u0275property("ngValue", n_r6);
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275textInterpolate(n_r6);
+  }
+}
+function FiltresLogements_Conditional_25_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r5 = i0.\u0275\u0275getCurrentView();
+    i0.\u0275\u0275elementStart(0, "label")(1, "span");
+    i0.\u0275\u0275text(2, "Nombre de pi\xE8ces");
+    i0.\u0275\u0275elementEnd();
+    i0.\u0275\u0275elementStart(3, "select", 11);
+    i0.\u0275\u0275twoWayListener("ngModelChange", function FiltresLogements_Conditional_25_Template_select_ngModelChange_3_listener($event) {
+      i0.\u0275\u0275restoreView(_r5);
+      const ctx_r3 = i0.\u0275\u0275nextContext();
+      i0.\u0275\u0275twoWayBindingSet(ctx_r3.criteres.pieces, $event) || (ctx_r3.criteres.pieces = $event);
+      return i0.\u0275\u0275resetView($event);
+    });
+    i0.\u0275\u0275elementStart(4, "option", 12);
+    i0.\u0275\u0275text(5, "Toutes");
+    i0.\u0275\u0275elementEnd();
+    i0.\u0275\u0275repeaterCreate(6, FiltresLogements_Conditional_25_For_7_Template, 2, 2, "option", 12, i0.\u0275\u0275repeaterTrackByIdentity);
+    i0.\u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const ctx_r3 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance(3);
+    i0.\u0275\u0275twoWayProperty("ngModel", ctx_r3.criteres.pieces);
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275property("ngValue", null);
+    i0.\u0275\u0275advance(2);
+    i0.\u0275\u0275repeater(i0.\u0275\u0275pureFunction0(2, _c0));
+  }
+}
+function FiltresLogements_Conditional_30_Template(rf, ctx) {
+  if (rf & 1) {
+    const _r7 = i0.\u0275\u0275getCurrentView();
+    i0.\u0275\u0275elementStart(0, "button", 13);
+    i0.\u0275\u0275listener("click", function FiltresLogements_Conditional_30_Template_button_click_0_listener() {
+      i0.\u0275\u0275restoreView(_r7);
+      const ctx_r3 = i0.\u0275\u0275nextContext();
+      const form_r2 = i0.\u0275\u0275reference(1);
+      return i0.\u0275\u0275resetView(ctx_r3.reinitialiser(form_r2));
+    });
+    i0.\u0275\u0275text(1, "R\xE9initialiser");
+    i0.\u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    i0.\u0275\u0275property("secondaire", true);
+  }
+}
+function FiltresLogements_Conditional_31_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "p", 9);
+    i0.\u0275\u0275text(1);
+    i0.\u0275\u0275elementEnd();
+  }
+  if (rf & 2) {
+    const ctx_r3 = i0.\u0275\u0275nextContext();
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275textInterpolate(ctx_r3.erreur);
+  }
+}
+var criteresVides = () => ({ ville: "", type: "", min: null, max: null, pieces: null });
+var FiltresLogements = class _FiltresLogements {
+  compact = false;
+  criteres = criteresVides();
+  recherche = new EventEmitter();
+  erreur = "";
+  appliquer(form) {
+    this.erreur = "";
+    if (form.invalid) {
+      this.erreur = "Les budgets doivent \xEAtre des nombres positifs.";
+      return;
+    }
+    if (this.criteres.min !== null && this.criteres.max !== null && this.criteres.min > this.criteres.max) {
+      this.erreur = "Le budget minimum doit \xEAtre inf\xE9rieur au budget maximum.";
+      return;
+    }
+    this.recherche.emit(__spreadProps(__spreadValues({}, this.criteres), { ville: this.criteres.ville.trim() }));
+  }
+  reinitialiser(form) {
+    this.criteres = criteresVides();
+    this.erreur = "";
+    form.resetForm(this.criteres);
+    this.recherche.emit(__spreadValues({}, this.criteres));
+  }
+  static \u0275fac = function FiltresLogements_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _FiltresLogements)();
+  };
+  static \u0275cmp = /* @__PURE__ */ i0.\u0275\u0275defineComponent({ type: _FiltresLogements, selectors: [["app-filtres-logements"]], inputs: { compact: "compact", criteres: "criteres" }, outputs: { recherche: "recherche" }, decls: 32, vars: 10, consts: [["form", "ngForm"], ["novalidate", "", 3, "ngSubmit"], ["name", "ville", "placeholder", "O\xF9 souhaitez-vous vivre ?", 3, "ngModelChange", "ngModel"], ["name", "type", 3, "ngModelChange", "ngModel"], ["value", ""], ["type", "number", "name", "max", "min", "0", "placeholder", "Sans maximum", 3, "ngModelChange", "ngModel"], ["appBouton", "", "type", "submit"], ["aria-hidden", "true"], ["appBouton", "", "type", "button", 3, "secondaire"], ["role", "alert", 1, "error", "filter-error"], ["type", "number", "name", "min", "min", "0", "placeholder", "Sans minimum", 3, "ngModelChange", "ngModel"], ["name", "pieces", 3, "ngModelChange", "ngModel"], [3, "ngValue"], ["appBouton", "", "type", "button", 3, "click", "secondaire"]], template: function FiltresLogements_Template(rf, ctx) {
+    if (rf & 1) {
+      const _r1 = i0.\u0275\u0275getCurrentView();
+      i0.\u0275\u0275elementStart(0, "form", 1, 0);
+      i0.\u0275\u0275listener("ngSubmit", function FiltresLogements_Template_form_ngSubmit_0_listener() {
+        i0.\u0275\u0275restoreView(_r1);
+        const form_r2 = i0.\u0275\u0275reference(1);
+        return i0.\u0275\u0275resetView(ctx.appliquer(form_r2));
+      });
+      i0.\u0275\u0275elementStart(2, "label")(3, "span");
+      i0.\u0275\u0275text(4, "Ville");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(5, "input", 2);
+      i0.\u0275\u0275twoWayListener("ngModelChange", function FiltresLogements_Template_input_ngModelChange_5_listener($event) {
+        i0.\u0275\u0275restoreView(_r1);
+        i0.\u0275\u0275twoWayBindingSet(ctx.criteres.ville, $event) || (ctx.criteres.ville = $event);
+        return i0.\u0275\u0275resetView($event);
+      });
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(6, "label")(7, "span");
+      i0.\u0275\u0275text(8, "Type de logement");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(9, "select", 3);
+      i0.\u0275\u0275twoWayListener("ngModelChange", function FiltresLogements_Template_select_ngModelChange_9_listener($event) {
+        i0.\u0275\u0275restoreView(_r1);
+        i0.\u0275\u0275twoWayBindingSet(ctx.criteres.type, $event) || (ctx.criteres.type = $event);
+        return i0.\u0275\u0275resetView($event);
+      });
+      i0.\u0275\u0275elementStart(10, "option", 4);
+      i0.\u0275\u0275text(11, "Tous les types");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(12, "option");
+      i0.\u0275\u0275text(13, "Appartement");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(14, "option");
+      i0.\u0275\u0275text(15, "Maison");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(16, "option");
+      i0.\u0275\u0275text(17, "Studio");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(18, "option");
+      i0.\u0275\u0275text(19, "Villa");
+      i0.\u0275\u0275elementEnd()()();
+      i0.\u0275\u0275conditionalCreate(20, FiltresLogements_Conditional_20_Template, 4, 1, "label");
+      i0.\u0275\u0275elementStart(21, "label")(22, "span");
+      i0.\u0275\u0275text(23, "Budget maximum (DT)");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(24, "input", 5);
+      i0.\u0275\u0275twoWayListener("ngModelChange", function FiltresLogements_Template_input_ngModelChange_24_listener($event) {
+        i0.\u0275\u0275restoreView(_r1);
+        i0.\u0275\u0275twoWayBindingSet(ctx.criteres.max, $event) || (ctx.criteres.max = $event);
+        return i0.\u0275\u0275resetView($event);
+      });
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275conditionalCreate(25, FiltresLogements_Conditional_25_Template, 8, 3, "label");
+      i0.\u0275\u0275elementStart(26, "button", 6)(27, "span", 7);
+      i0.\u0275\u0275text(28, "\u2315");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275text(29);
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275conditionalCreate(30, FiltresLogements_Conditional_30_Template, 2, 1, "button", 8);
+      i0.\u0275\u0275conditionalCreate(31, FiltresLogements_Conditional_31_Template, 2, 1, "p", 9);
+      i0.\u0275\u0275elementEnd();
+    }
+    if (rf & 2) {
+      i0.\u0275\u0275classMap(ctx.compact ? "search-bar" : "filters");
+      i0.\u0275\u0275advance(5);
+      i0.\u0275\u0275twoWayProperty("ngModel", ctx.criteres.ville);
+      i0.\u0275\u0275advance(4);
+      i0.\u0275\u0275twoWayProperty("ngModel", ctx.criteres.type);
+      i0.\u0275\u0275advance(11);
+      i0.\u0275\u0275conditional(!ctx.compact ? 20 : -1);
+      i0.\u0275\u0275advance(4);
+      i0.\u0275\u0275twoWayProperty("ngModel", ctx.criteres.max);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(!ctx.compact ? 25 : -1);
+      i0.\u0275\u0275advance(4);
+      i0.\u0275\u0275textInterpolate1(" ", ctx.compact ? "Rechercher" : "Filtrer");
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(!ctx.compact ? 30 : -1);
+      i0.\u0275\u0275advance();
+      i0.\u0275\u0275conditional(ctx.erreur ? 31 : -1);
+    }
+  }, dependencies: [FormsModule, i1.\u0275NgNoValidate, i1.NgSelectOption, i1.\u0275NgSelectMultipleOption, i1.DefaultValueAccessor, i1.NumberValueAccessor, i1.RangeValueAccessor, i1.CheckboxControlValueAccessor, i1.SelectControlValueAccessor, i1.SelectMultipleControlValueAccessor, i1.RadioControlValueAccessor, i1.NgControlStatus, i1.NgControlStatusGroup, i1.RequiredValidator, i1.MinLengthValidator, i1.MaxLengthValidator, i1.PatternValidator, i1.CheckboxRequiredValidator, i1.EmailValidator, i1.MinValidator, i1.MaxValidator, i1.NgModel, i1.NgModelGroup, i1.NgForm, Bouton], encapsulation: 2 });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassMetadata(FiltresLogements, [{
+    type: Component,
+    args: [{
+      selector: "app-filtres-logements",
+      imports: [FormsModule, Bouton],
+      template: `
+    <form [class]="compact ? 'search-bar' : 'filters'" #form="ngForm" (ngSubmit)="appliquer(form)" novalidate>
+      <label><span>Ville</span><input name="ville" [(ngModel)]="criteres.ville" placeholder="O\xF9 souhaitez-vous vivre ?"></label>
+      <label><span>Type de logement</span><select name="type" [(ngModel)]="criteres.type"><option value="">Tous les types</option><option>Appartement</option><option>Maison</option><option>Studio</option><option>Villa</option></select></label>
+      @if (!compact) { <label><span>Budget minimum (DT)</span><input type="number" name="min" min="0" [(ngModel)]="criteres.min" placeholder="Sans minimum"></label> }
+      <label><span>Budget maximum (DT)</span><input type="number" name="max" min="0" [(ngModel)]="criteres.max" placeholder="Sans maximum"></label>
+      @if (!compact) { <label><span>Nombre de pi\xE8ces</span><select name="pieces" [(ngModel)]="criteres.pieces"><option [ngValue]="null">Toutes</option>@for (n of [1,2,3,4,5,6]; track n) { <option [ngValue]="n">{{n}}</option> }</select></label> }
+      <button appBouton type="submit"><span aria-hidden="true">\u2315</span> {{compact ? 'Rechercher' : 'Filtrer'}}</button>
+      @if (!compact) { <button appBouton [secondaire]="true" type="button" (click)="reinitialiser(form)">R\xE9initialiser</button> }
+      @if (erreur) { <p class="error filter-error" role="alert">{{erreur}}</p> }
+    </form>`
+    }]
+  }], null, { compact: [{
+    type: Input
+  }], criteres: [{
+    type: Input
+  }], recherche: [{
+    type: Output
+  }] });
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassDebugInfo(FiltresLogements, { className: "FiltresLogements", filePath: "app/components/filtres-logements.ts", lineNumber: 25 });
+})();
+(() => {
+  const id = "app%2Fcomponents%2Ffiltres-logements.ts%40FiltresLogements";
+  function FiltresLogements_HmrLoad(t) {
+    import(
+      /* @vite-ignore */
+      __vite__injectQuery(i0.\u0275\u0275getReplaceMetadataURL(id, t, import.meta.url), 'import')
+    ).then((m) => m.default && i0.\u0275\u0275replaceMetadata(FiltresLogements, m.default, [i0, i1], [FormsModule, Bouton, Component, Input, Output], import.meta, id));
+  }
+  (typeof ngDevMode === "undefined" || ngDevMode) && FiltresLogements_HmrLoad(Date.now());
+  (typeof ngDevMode === "undefined" || ngDevMode) && (import.meta.hot && import.meta.hot.on("angular:component-update", (d) => d.id === id && FiltresLogements_HmrLoad(d.timestamp)));
+})();
+
+export {
+  criteresVides,
+  FiltresLogements
+};
+
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50cy9maWx0cmVzLWxvZ2VtZW50cy50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBDb21wb25lbnQsIEV2ZW50RW1pdHRlciwgSW5wdXQsIE91dHB1dCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgRm9ybXNNb2R1bGUsIE5nRm9ybSB9IGZyb20gJ0Bhbmd1bGFyL2Zvcm1zJztcbmltcG9ydCB7IEJvdXRvbiB9IGZyb20gJy4vYm91dG9uJztcblxuZXhwb3J0IGludGVyZmFjZSBDcml0ZXJlc0xvZ2VtZW50cyB7XG4gIHZpbGxlOiBzdHJpbmc7IHR5cGU6IHN0cmluZzsgbWluOiBudW1iZXIgfCBudWxsOyBtYXg6IG51bWJlciB8IG51bGw7IHBpZWNlczogbnVtYmVyIHwgbnVsbDtcbn1cbmV4cG9ydCBjb25zdCBjcml0ZXJlc1ZpZGVzID0gKCk6IENyaXRlcmVzTG9nZW1lbnRzID0+ICh7dmlsbGU6ICcnLCB0eXBlOiAnJywgbWluOiBudWxsLCBtYXg6IG51bGwsIHBpZWNlczogbnVsbH0pO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdhcHAtZmlsdHJlcy1sb2dlbWVudHMnLFxuICBpbXBvcnRzOiBbRm9ybXNNb2R1bGUsIEJvdXRvbl0sXG4gIHRlbXBsYXRlOiBgXG4gICAgPGZvcm0gW2NsYXNzXT1cImNvbXBhY3QgPyAnc2VhcmNoLWJhcicgOiAnZmlsdGVycydcIiAjZm9ybT1cIm5nRm9ybVwiIChuZ1N1Ym1pdCk9XCJhcHBsaXF1ZXIoZm9ybSlcIiBub3ZhbGlkYXRlPlxuICAgICAgPGxhYmVsPjxzcGFuPlZpbGxlPC9zcGFuPjxpbnB1dCBuYW1lPVwidmlsbGVcIiBbKG5nTW9kZWwpXT1cImNyaXRlcmVzLnZpbGxlXCIgcGxhY2Vob2xkZXI9XCJPw7kgc291aGFpdGV6LXZvdXMgdml2cmUgP1wiPjwvbGFiZWw+XG4gICAgICA8bGFiZWw+PHNwYW4+VHlwZSBkZSBsb2dlbWVudDwvc3Bhbj48c2VsZWN0IG5hbWU9XCJ0eXBlXCIgWyhuZ01vZGVsKV09XCJjcml0ZXJlcy50eXBlXCI+PG9wdGlvbiB2YWx1ZT1cIlwiPlRvdXMgbGVzIHR5cGVzPC9vcHRpb24+PG9wdGlvbj5BcHBhcnRlbWVudDwvb3B0aW9uPjxvcHRpb24+TWFpc29uPC9vcHRpb24+PG9wdGlvbj5TdHVkaW88L29wdGlvbj48b3B0aW9uPlZpbGxhPC9vcHRpb24+PC9zZWxlY3Q+PC9sYWJlbD5cbiAgICAgIEBpZiAoIWNvbXBhY3QpIHsgPGxhYmVsPjxzcGFuPkJ1ZGdldCBtaW5pbXVtIChEVCk8L3NwYW4+PGlucHV0IHR5cGU9XCJudW1iZXJcIiBuYW1lPVwibWluXCIgbWluPVwiMFwiIFsobmdNb2RlbCldPVwiY3JpdGVyZXMubWluXCIgcGxhY2Vob2xkZXI9XCJTYW5zIG1pbmltdW1cIj48L2xhYmVsPiB9XG4gICAgICA8bGFiZWw+PHNwYW4+QnVkZ2V0IG1heGltdW0gKERUKTwvc3Bhbj48aW5wdXQgdHlwZT1cIm51bWJlclwiIG5hbWU9XCJtYXhcIiBtaW49XCIwXCIgWyhuZ01vZGVsKV09XCJjcml0ZXJlcy5tYXhcIiBwbGFjZWhvbGRlcj1cIlNhbnMgbWF4aW11bVwiPjwvbGFiZWw+XG4gICAgICBAaWYgKCFjb21wYWN0KSB7IDxsYWJlbD48c3Bhbj5Ob21icmUgZGUgcGnDqGNlczwvc3Bhbj48c2VsZWN0IG5hbWU9XCJwaWVjZXNcIiBbKG5nTW9kZWwpXT1cImNyaXRlcmVzLnBpZWNlc1wiPjxvcHRpb24gW25nVmFsdWVdPVwibnVsbFwiPlRvdXRlczwvb3B0aW9uPkBmb3IgKG4gb2YgWzEsMiwzLDQsNSw2XTsgdHJhY2sgbikgeyA8b3B0aW9uIFtuZ1ZhbHVlXT1cIm5cIj57e259fTwvb3B0aW9uPiB9PC9zZWxlY3Q+PC9sYWJlbD4gfVxuICAgICAgPGJ1dHRvbiBhcHBCb3V0b24gdHlwZT1cInN1Ym1pdFwiPjxzcGFuIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPuKMlTwvc3Bhbj4ge3tjb21wYWN0ID8gJ1JlY2hlcmNoZXInIDogJ0ZpbHRyZXInfX08L2J1dHRvbj5cbiAgICAgIEBpZiAoIWNvbXBhY3QpIHsgPGJ1dHRvbiBhcHBCb3V0b24gW3NlY29uZGFpcmVdPVwidHJ1ZVwiIHR5cGU9XCJidXR0b25cIiAoY2xpY2spPVwicmVpbml0aWFsaXNlcihmb3JtKVwiPlLDqWluaXRpYWxpc2VyPC9idXR0b24+IH1cbiAgICAgIEBpZiAoZXJyZXVyKSB7IDxwIGNsYXNzPVwiZXJyb3IgZmlsdGVyLWVycm9yXCIgcm9sZT1cImFsZXJ0XCI+e3tlcnJldXJ9fTwvcD4gfVxuICAgIDwvZm9ybT5gXG59KVxuZXhwb3J0IGNsYXNzIEZpbHRyZXNMb2dlbWVudHMge1xuICBASW5wdXQoKSBjb21wYWN0ID0gZmFsc2U7XG4gIEBJbnB1dCgpIGNyaXRlcmVzOiBDcml0ZXJlc0xvZ2VtZW50cyA9IGNyaXRlcmVzVmlkZXMoKTtcbiAgQE91dHB1dCgpIHJlY2hlcmNoZSA9IG5ldyBFdmVudEVtaXR0ZXI8Q3JpdGVyZXNMb2dlbWVudHM+KCk7XG4gIGVycmV1ciA9ICcnO1xuICBhcHBsaXF1ZXIoZm9ybTogTmdGb3JtKTogdm9pZCB7XG4gICAgdGhpcy5lcnJldXIgPSAnJztcbiAgICBpZiAoZm9ybS5pbnZhbGlkKSB7IHRoaXMuZXJyZXVyID0gJ0xlcyBidWRnZXRzIGRvaXZlbnQgw6p0cmUgZGVzIG5vbWJyZXMgcG9zaXRpZnMuJzsgcmV0dXJuOyB9XG4gICAgaWYgKHRoaXMuY3JpdGVyZXMubWluICE9PSBudWxsICYmIHRoaXMuY3JpdGVyZXMubWF4ICE9PSBudWxsICYmIHRoaXMuY3JpdGVyZXMubWluID4gdGhpcy5jcml0ZXJlcy5tYXgpIHtcbiAgICAgIHRoaXMuZXJyZXVyID0gJ0xlIGJ1ZGdldCBtaW5pbXVtIGRvaXQgw6p0cmUgaW5mw6lyaWV1ciBhdSBidWRnZXQgbWF4aW11bS4nOyByZXR1cm47XG4gICAgfVxuICAgIHRoaXMucmVjaGVyY2hlLmVtaXQoey4uLnRoaXMuY3JpdGVyZXMsIHZpbGxlOiB0aGlzLmNyaXRlcmVzLnZpbGxlLnRyaW0oKX0pO1xuICB9XG4gIHJlaW5pdGlhbGlzZXIoZm9ybTogTmdGb3JtKTogdm9pZCB7XG4gICAgdGhpcy5jcml0ZXJlcyA9IGNyaXRlcmVzVmlkZXMoKTsgdGhpcy5lcnJldXIgPSAnJzsgZm9ybS5yZXNldEZvcm0odGhpcy5jcml0ZXJlcyk7XG4gICAgdGhpcy5yZWNoZXJjaGUuZW1pdCh7Li4udGhpcy5jcml0ZXJlc30pO1xuICB9XG59XG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7OztBQUFBLFNBQVMsV0FBVyxjQUFjLE9BQU8sY0FBYztBQUN2RCxTQUFTLG1CQUEyQjtBOztpQkFpQm9ILEdBQUUsR0FBRSxHQUFFLEdBQUUsR0FBRSxDQUFDOzs7O0FBRjVJLElBQUEsNEJBQUEsR0FBQSxPQUFBLEVBQU8sR0FBQSxNQUFBO0FBQU0sSUFBQSxvQkFBQSxHQUFBLHFCQUFBO0FBQW1CLElBQUEsMEJBQUE7QUFBTyxJQUFBLDRCQUFBLEdBQUEsU0FBQSxFQUFBO0FBQXdDLElBQUEsOEJBQUEsaUJBQUEsU0FBQSx3RUFBQSxRQUFBO0FBQUEsTUFBQSwyQkFBQSxHQUFBO0FBQUEsWUFBQSxTQUFBLDJCQUFBO0FBQUEsTUFBQSxnQ0FBQSxPQUFBLFNBQUEsS0FBQSxNQUFBLE1BQUEsT0FBQSxTQUFBLE1BQUE7QUFBQSxhQUFBLHlCQUFBLE1BQUE7SUFBQSxDQUFBO0FBQXhDLElBQUEsMEJBQUEsRUFBOEY7Ozs7QUFBdEQsSUFBQSx1QkFBQSxDQUFBO0FBQUEsSUFBQSw4QkFBQSxXQUFBLE9BQUEsU0FBQSxHQUFBOzs7OztBQUVzRixJQUFBLDRCQUFBLEdBQUEsVUFBQSxFQUFBO0FBQXNCLElBQUEsb0JBQUEsQ0FBQTtBQUFLLElBQUEsMEJBQUE7Ozs7QUFBbkIsSUFBQSx3QkFBQSxXQUFBLElBQUE7QUFBYyxJQUFBLHVCQUFBO0FBQUEsSUFBQSwrQkFBQSxJQUFBOzs7Ozs7QUFBM0wsSUFBQSw0QkFBQSxHQUFBLE9BQUEsRUFBTyxHQUFBLE1BQUE7QUFBTSxJQUFBLG9CQUFBLEdB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

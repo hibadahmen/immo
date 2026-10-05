@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: immobilier.example.immobilier.ReglesLocationTests
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.334 s -- in immobilier.example.immobilier.ReglesLocationTests

@@ -1,0 +1,349 @@
+import { injectQuery as __vite__injectQuery } from "/@vite/client";import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/chunk-DA2BPHNJ.js");import {
+  FiltresLogements
+} from "/chunk-7B6GV3BS.js";
+import {
+  CarteLogement
+} from "/chunk-MKKAKZ7A.js";
+import {
+  Bouton
+} from "/chunk-DEWOSBYM.js";
+import {
+  ReservationService
+} from "/chunk-JBOOZZUE.js";
+import {
+  LogementService
+} from "/chunk-LM7C5ED2.js";
+import {
+  AuthService
+} from "/chunk-QDQN375L.js";
+import "/chunk-VUJOFXKG.js";
+
+// src/app/pages/accueil.ts
+import { Component, inject } from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache/20.3.37/frontend-immo/vite/deps/@angular_core.js?v=a5b53bef";
+import { Router, RouterLink } from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache/20.3.37/frontend-immo/vite/deps/@angular_router.js?v=a5b53bef";
+import * as i0 from "/@fs/E:/L3MDW1/fullstuck/projet/frontend-immo/.angular/cache/20.3.37/frontend-immo/vite/deps/@angular_core.js?v=a5b53bef";
+var _c0 = (a0) => ({ type: a0 });
+var _forTrack0 = ($index, $item) => $item.type;
+var _forTrack1 = ($index, $item) => $item.libelle;
+var _forTrack2 = ($index, $item) => $item.id;
+function Accueil_For_20_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "a", 11);
+    i0.\u0275\u0275element(1, "img", 36);
+    i0.\u0275\u0275elementStart(2, "span");
+    i0.\u0275\u0275text(3);
+    i0.\u0275\u0275elementStart(4, "span", 19);
+    i0.\u0275\u0275text(5, "\u2197");
+    i0.\u0275\u0275elementEnd()()();
+  }
+  if (rf & 2) {
+    const categorie_r1 = ctx.$implicit;
+    i0.\u0275\u0275property("queryParams", i0.\u0275\u0275pureFunction1(4, _c0, categorie_r1.type));
+    i0.\u0275\u0275advance();
+    i0.\u0275\u0275property("src", "https://images.unsplash.com/" + categorie_r1.image + "?auto=format&fit=crop&w=600&q=80", i0.\u0275\u0275sanitizeUrl)("alt", categorie_r1.titre);
+    i0.\u0275\u0275advance(2);
+    i0.\u0275\u0275textInterpolate1("", categorie_r1.titre, " ");
+  }
+}
+function Accueil_For_33_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "div")(1, "strong");
+    i0.\u0275\u0275text(2);
+    i0.\u0275\u0275elementEnd();
+    i0.\u0275\u0275elementStart(3, "span");
+    i0.\u0275\u0275text(4);
+    i0.\u0275\u0275elementEnd()();
+  }
+  if (rf & 2) {
+    const stat_r2 = ctx.$implicit;
+    i0.\u0275\u0275advance(2);
+    i0.\u0275\u0275textInterpolate(stat_r2.valeur);
+    i0.\u0275\u0275advance(2);
+    i0.\u0275\u0275textInterpolate(stat_r2.libelle);
+  }
+}
+function Accueil_For_113_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275element(0, "app-carte-logement", 32);
+  }
+  if (rf & 2) {
+    const logement_r3 = ctx.$implicit;
+    i0.\u0275\u0275property("logement", logement_r3);
+  }
+}
+function Accueil_ForEmpty_114_Template(rf, ctx) {
+  if (rf & 1) {
+    i0.\u0275\u0275elementStart(0, "div", 33)(1, "h3");
+    i0.\u0275\u0275text(2, "De nouvelles adresses arrivent bient\xF4t");
+    i0.\u0275\u0275elementEnd();
+    i0.\u0275\u0275elementStart(3, "p");
+    i0.\u0275\u0275text(4, "Aucun logement n'est publi\xE9 pour le moment.");
+    i0.\u0275\u0275elementEnd()();
+  }
+}
+var Accueil = class _Accueil {
+  biens = inject(LogementService);
+  auth = inject(AuthService);
+  demandes = inject(ReservationService);
+  router = inject(Router);
+  categories = [
+    { titre: "Appartements", type: "Appartement", image: "photo-1600210492486-724fe5c67fb0" },
+    { titre: "Maisons", type: "Maison", image: "photo-1600607687920-4e2a09cf159d" },
+    { titre: "Studios", type: "Studio", image: "photo-1522708323590-d24dbb6b0267" },
+    { titre: "Villas", type: "Villa", image: "photo-1600607687939-ce8a6c25118c" }
+  ];
+  get annonces() {
+    return this.biens.logements.filter((l) => !l.archive);
+  }
+  get recents() {
+    return this.annonces.slice(-3).reverse();
+  }
+  // Chiffres calculés à partir des données présentes, sans statistiques inventées.
+  get statistiques() {
+    return [
+      { valeur: this.annonces.length, libelle: "Logements publi\xE9s" },
+      { valeur: this.auth.comptes.filter((c) => c.role === "proprietaire").length, libelle: "Propri\xE9taires inscrits" },
+      { valeur: new Set(this.annonces.map((l) => l.ville.trim().toLowerCase())).size, libelle: "Villes couvertes" },
+      { valeur: this.demandes.reservations.filter((r) => r.statut === "Accept\xE9e").length, libelle: "R\xE9servations accept\xE9es" }
+    ];
+  }
+  chercher(criteres) {
+    this.router.navigate(["/logements"], { queryParams: { ville: criteres.ville || null, type: criteres.type || null, max: criteres.max } });
+  }
+  static \u0275fac = function Accueil_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _Accueil)();
+  };
+  static \u0275cmp = /* @__PURE__ */ i0.\u0275\u0275defineComponent({ type: _Accueil, selectors: [["ng-component"]], decls: 118, vars: 2, consts: [[1, "hero"], ["src", "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85", "alt", "Architecture d'une maison contemporaine ouverte sur la nature", "fetchpriority", "high", 1, "hero-background"], [1, "hero-copy"], [1, "eyebrow"], [1, "hero-description"], [1, "desktop-break"], [1, "hero-search"], [3, "recherche", "compact"], [1, "hero-caption"], ["aria-label", "Cat\xE9gories de logements", 1, "container", "categories-section"], [1, "category-grid"], ["routerLink", "/logements", 1, "category-card", 3, "queryParams"], [1, "container", "section", "introduction"], [1, "subtitle"], [1, "platform-stats"], [1, "photo-collage"], ["src", "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85", "alt", "Salon lumineux pour votre prochain chez-vous", "loading", "lazy", 1, "collage-main"], ["src", "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80", "alt", "Int\xE9rieur chaleureux et confortable", "loading", "lazy", 1, "collage-small"], [1, "collage-label"], ["aria-hidden", "true"], ["id", "comment-ca-marche", 1, "container", "section"], [1, "section-heading"], [1, "section-description"], [1, "service-grid"], ["routerLink", "/logements", 1, "service-card"], ["aria-hidden", "true", 1, "service-icon"], [1, "step-number"], [1, "service-link"], ["routerLink", "/reservations", 1, "service-card"], ["routerLink", "/proprietaire/ajouter", 1, "service-card", "featured"], [1, "container", "section"], [1, "cards"], [3, "logement"], [1, "empty"], [1, "center-action"], ["appBouton", "", "routerLink", "/logements"], ["loading", "lazy", 3, "src", "alt"]], template: function Accueil_Template(rf, ctx) {
+    if (rf & 1) {
+      i0.\u0275\u0275elementStart(0, "section", 0);
+      i0.\u0275\u0275element(1, "img", 1);
+      i0.\u0275\u0275elementStart(2, "div", 2)(3, "p", 3);
+      i0.\u0275\u0275text(4, "UN LIEU \xC0 VOUS. UNE NOUVELLE HISTOIRE.");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(5, "h1");
+      i0.\u0275\u0275text(6, "Trouvez le logement");
+      i0.\u0275\u0275element(7, "br");
+      i0.\u0275\u0275text(8, "qui vous ressemble");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(9, "p", 4);
+      i0.\u0275\u0275text(10, "D\xE9couvrez des biens \xE0 louer et \xE9changez directement");
+      i0.\u0275\u0275element(11, "br", 5);
+      i0.\u0275\u0275text(12, " avec leurs propri\xE9taires.");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(13, "div", 6)(14, "app-filtres-logements", 7);
+      i0.\u0275\u0275listener("recherche", function Accueil_Template_app_filtres_logements_recherche_14_listener($event) {
+        return ctx.chercher($event);
+      });
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(15, "span", 8);
+      i0.\u0275\u0275text(16, "LA BONNE ADRESSE POUR VOTRE PROCHAIN CHAPITRE");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(17, "section", 9)(18, "div", 10);
+      i0.\u0275\u0275repeaterCreate(19, Accueil_For_20_Template, 6, 6, "a", 11, _forTrack0);
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(21, "section", 12)(22, "div")(23, "p", 3);
+      i0.\u0275\u0275text(24, "PENS\xC9 POUR VOTRE PROCHAINE \xC9TAPE");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(25, "h2");
+      i0.\u0275\u0275text(26, "Votre prochain logement,");
+      i0.\u0275\u0275element(27, "br");
+      i0.\u0275\u0275text(28, "en toute simplicit\xE9");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(29, "p", 13);
+      i0.\u0275\u0275text(30, "Des propri\xE9taires et des locataires r\xE9unis au m\xEAme endroit. Explorez les annonces, trouvez votre coup de c\u0153ur et pr\xE9parez votre arriv\xE9e, \xE0 votre rythme.");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(31, "div", 14);
+      i0.\u0275\u0275repeaterCreate(32, Accueil_For_33_Template, 5, 2, "div", null, _forTrack1);
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(34, "small");
+      i0.\u0275\u0275text(35, "Chiffres issus des donn\xE9es de d\xE9monstration de l'application.");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(36, "div", 15);
+      i0.\u0275\u0275element(37, "img", 16)(38, "img", 17);
+      i0.\u0275\u0275elementStart(39, "div", 18)(40, "span", 19);
+      i0.\u0275\u0275text(41, "\u2302");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(42, "strong");
+      i0.\u0275\u0275text(43, "Un chez-vous,");
+      i0.\u0275\u0275element(44, "br");
+      i0.\u0275\u0275text(45, "\xE0 votre image.");
+      i0.\u0275\u0275elementEnd()()()();
+      i0.\u0275\u0275elementStart(46, "section", 20)(47, "div", 21)(48, "div")(49, "p", 3);
+      i0.\u0275\u0275text(50, "DE L'ENVIE \xC0 LA NOUVELLE ADRESSE");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(51, "h2");
+      i0.\u0275\u0275text(52, "Une location plus simple");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(53, "p", 22);
+      i0.\u0275\u0275text(54, "Quatre \xE9tapes pour donner vie");
+      i0.\u0275\u0275element(55, "br");
+      i0.\u0275\u0275text(56, "\xE0 votre projet de location.");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(57, "div", 23)(58, "a", 24)(59, "span", 25);
+      i0.\u0275\u0275text(60, "\u2315");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(61, "span", 26);
+      i0.\u0275\u0275text(62, "01");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(63, "h3");
+      i0.\u0275\u0275text(64, "Recherchez votre logement");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(65, "p");
+      i0.\u0275\u0275text(66, "Filtrez les annonces selon votre ville, votre budget et vos envies.");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(67, "span", 27);
+      i0.\u0275\u0275text(68, "Trouver mon adresse \u2197");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(69, "a", 24)(70, "span", 25);
+      i0.\u0275\u0275text(71, "\u2302");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(72, "span", 26);
+      i0.\u0275\u0275text(73, "02");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(74, "h3");
+      i0.\u0275\u0275text(75, "Consultez les d\xE9tails");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(76, "p");
+      i0.\u0275\u0275text(77, "D\xE9couvrez les photos, les \xE9quipements et le loyer de chaque logement.");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(78, "span", 27);
+      i0.\u0275\u0275text(79, "Explorer les annonces \u2197");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(80, "a", 28)(81, "span", 25);
+      i0.\u0275\u0275text(82, "\u25A4");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(83, "span", 26);
+      i0.\u0275\u0275text(84, "03");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(85, "h3");
+      i0.\u0275\u0275text(86, "Envoyez votre demande");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(87, "p");
+      i0.\u0275\u0275text(88, "Choisissez vos dates et adressez votre projet au propri\xE9taire.");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(89, "span", 27);
+      i0.\u0275\u0275text(90, "Suivre mes demandes \u2197");
+      i0.\u0275\u0275elementEnd()();
+      i0.\u0275\u0275elementStart(91, "a", 29)(92, "span", 25);
+      i0.\u0275\u0275text(93, "\uFF0B");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(94, "span", 26);
+      i0.\u0275\u0275text(95, "04");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(96, "h3");
+      i0.\u0275\u0275text(97, "Publiez votre bien");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(98, "p");
+      i0.\u0275\u0275text(99, "Ajoutez votre logement et g\xE9rez les demandes depuis votre espace.");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(100, "span", 27);
+      i0.\u0275\u0275text(101, "Partager mon bien \u2197");
+      i0.\u0275\u0275elementEnd()()()();
+      i0.\u0275\u0275elementStart(102, "section", 30)(103, "div", 21)(104, "div")(105, "p", 3);
+      i0.\u0275\u0275text(106, "VOTRE PROCHAIN COUP DE C\u0152UR");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(107, "h2");
+      i0.\u0275\u0275text(108, "D\xE9couvrez les logements disponibles");
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(109, "p", 13);
+      i0.\u0275\u0275text(110, "De belles adresses pour \xE9crire la suite de votre histoire.");
+      i0.\u0275\u0275elementEnd()()();
+      i0.\u0275\u0275elementStart(111, "div", 31);
+      i0.\u0275\u0275repeaterCreate(112, Accueil_For_113_Template, 1, 1, "app-carte-logement", 32, _forTrack2, false, Accueil_ForEmpty_114_Template, 5, 0, "div", 33);
+      i0.\u0275\u0275elementEnd();
+      i0.\u0275\u0275elementStart(115, "div", 34)(116, "a", 35);
+      i0.\u0275\u0275text(117, "Voir tous les logements \u2197");
+      i0.\u0275\u0275elementEnd()()();
+    }
+    if (rf & 2) {
+      i0.\u0275\u0275advance(14);
+      i0.\u0275\u0275property("compact", true);
+      i0.\u0275\u0275advance(5);
+      i0.\u0275\u0275repeater(ctx.categories);
+      i0.\u0275\u0275advance(13);
+      i0.\u0275\u0275repeater(ctx.statistiques);
+      i0.\u0275\u0275advance(80);
+      i0.\u0275\u0275repeater(ctx.recents);
+    }
+  }, dependencies: [RouterLink, CarteLogement, FiltresLogements, Bouton], encapsulation: 2 });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassMetadata(Accueil, [{
+    type: Component,
+    args: [{ imports: [RouterLink, CarteLogement, FiltresLogements, Bouton], template: `<section class="hero">
+  <img class="hero-background" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85" alt="Architecture d'une maison contemporaine ouverte sur la nature" fetchpriority="high">
+  <div class="hero-copy">
+    <p class="eyebrow">UN LIEU \xC0 VOUS. UNE NOUVELLE HISTOIRE.</p>
+    <h1>Trouvez le logement<br>qui vous ressemble</h1>
+    <p class="hero-description">D\xE9couvrez des biens \xE0 louer et \xE9changez directement<br class="desktop-break"> avec leurs propri\xE9taires.</p>
+  </div>
+  <div class="hero-search"><app-filtres-logements [compact]="true" (recherche)="chercher($event)" /></div>
+  <span class="hero-caption">LA BONNE ADRESSE POUR VOTRE PROCHAIN CHAPITRE</span>
+</section>
+
+<section class="container categories-section" aria-label="Cat\xE9gories de logements">
+  <div class="category-grid">
+    @for (categorie of categories; track categorie.type) {
+      <a class="category-card" routerLink="/logements" [queryParams]="{type: categorie.type}">
+        <img [src]="'https://images.unsplash.com/' + categorie.image + '?auto=format&fit=crop&w=600&q=80'" [alt]="categorie.titre" loading="lazy">
+        <span>{{categorie.titre}} <span aria-hidden="true">\u2197</span></span>
+      </a>
+    }
+  </div>
+</section>
+
+<section class="container section introduction">
+  <div>
+    <p class="eyebrow">PENS\xC9 POUR VOTRE PROCHAINE \xC9TAPE</p>
+    <h2>Votre prochain logement,<br>en toute simplicit\xE9</h2>
+    <p class="subtitle">Des propri\xE9taires et des locataires r\xE9unis au m\xEAme endroit. Explorez les annonces, trouvez votre coup de c\u0153ur et pr\xE9parez votre arriv\xE9e, \xE0 votre rythme.</p>
+    <div class="platform-stats">
+      @for (stat of statistiques; track stat.libelle) { <div><strong>{{stat.valeur}}</strong><span>{{stat.libelle}}</span></div> }
+    </div>
+    <small>Chiffres issus des donn\xE9es de d\xE9monstration de l'application.</small>
+  </div>
+  <div class="photo-collage">
+    <img class="collage-main" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=85" alt="Salon lumineux pour votre prochain chez-vous" loading="lazy">
+    <img class="collage-small" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=600&q=80" alt="Int\xE9rieur chaleureux et confortable" loading="lazy">
+    <div class="collage-label"><span aria-hidden="true">\u2302</span><strong>Un chez-vous,<br>\xE0 votre image.</strong></div>
+  </div>
+</section>
+
+<section class="container section" id="comment-ca-marche">
+  <div class="section-heading"><div><p class="eyebrow">DE L'ENVIE \xC0 LA NOUVELLE ADRESSE</p><h2>Une location plus simple</h2></div><p class="section-description">Quatre \xE9tapes pour donner vie<br>\xE0 votre projet de location.</p></div>
+  <div class="service-grid">
+    <a class="service-card" routerLink="/logements"><span class="service-icon" aria-hidden="true">\u2315</span><span class="step-number">01</span><h3>Recherchez votre logement</h3><p>Filtrez les annonces selon votre ville, votre budget et vos envies.</p><span class="service-link">Trouver mon adresse \u2197</span></a>
+    <a class="service-card" routerLink="/logements"><span class="service-icon" aria-hidden="true">\u2302</span><span class="step-number">02</span><h3>Consultez les d\xE9tails</h3><p>D\xE9couvrez les photos, les \xE9quipements et le loyer de chaque logement.</p><span class="service-link">Explorer les annonces \u2197</span></a>
+    <a class="service-card" routerLink="/reservations"><span class="service-icon" aria-hidden="true">\u25A4</span><span class="step-number">03</span><h3>Envoyez votre demande</h3><p>Choisissez vos dates et adressez votre projet au propri\xE9taire.</p><span class="service-link">Suivre mes demandes \u2197</span></a>
+    <a class="service-card featured" routerLink="/proprietaire/ajouter"><span class="service-icon" aria-hidden="true">\uFF0B</span><span class="step-number">04</span><h3>Publiez votre bien</h3><p>Ajoutez votre logement et g\xE9rez les demandes depuis votre espace.</p><span class="service-link">Partager mon bien \u2197</span></a>
+  </div>
+</section>
+
+<section class="container section">
+  <div class="section-heading"><div><p class="eyebrow">VOTRE PROCHAIN COUP DE C\u0152UR</p><h2>D\xE9couvrez les logements disponibles</h2><p class="subtitle">De belles adresses pour \xE9crire la suite de votre histoire.</p></div></div>
+  <div class="cards">@for (logement of recents; track logement.id) { <app-carte-logement [logement]="logement" /> } @empty { <div class="empty"><h3>De nouvelles adresses arrivent bient\xF4t</h3><p>Aucun logement n'est publi\xE9 pour le moment.</p></div> }</div>
+  <div class="center-action"><a appBouton routerLink="/logements">Voir tous les logements \u2197</a></div>
+</section>
+` }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && i0.\u0275setClassDebugInfo(Accueil, { className: "Accueil", filePath: "app/pages/accueil.ts", lineNumber: 14 });
+})();
+(() => {
+  const id = "app%2Fpages%2Faccueil.ts%40Accueil";
+  function Accueil_HmrLoad(t) {
+    import(
+      /* @vite-ignore */
+      __vite__injectQuery(i0.\u0275\u0275getReplaceMetadataURL(id, t, import.meta.url), 'import')
+    ).then((m) => m.default && i0.\u0275\u0275replaceMetadata(Accueil, m.default, [i0], [RouterLink, CarteLogement, FiltresLogements, Bouton, Component], import.meta, id));
+  }
+  (typeof ngDevMode === "undefined" || ngDevMode) && Accueil_HmrLoad(Date.now());
+  (typeof ngDevMode === "undefined" || ngDevMode) && (import.meta.hot && import.meta.hot.on("angular:component-update", (d) => d.id === id && Accueil_HmrLoad(d.timestamp)));
+})();
+export {
+  Accueil
+};
+
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvcGFnZXMvYWNjdWVpbC50cyIsInNyYy9hcHAvcGFnZXMvYWNjdWVpbC5odG1sIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgaW5qZWN0IH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBSb3V0ZXIsIFJvdXRlckxpbmsgfSBmcm9tICdAYW5ndWxhci9yb3V0ZXInO1xuaW1wb3J0IHsgQ2FydGVMb2dlbWVudCB9IGZyb20gJy4uL2NvbXBvbmVudHMvY2FydGUtbG9nZW1lbnQnO1xuaW1wb3J0IHsgQ3JpdGVyZXNMb2dlbWVudHMsIEZpbHRyZXNMb2dlbWVudHMgfSBmcm9tICcuLi9jb21wb25lbnRzL2ZpbHRyZXMtbG9nZW1lbnRzJztcbmltcG9ydCB7IEJvdXRvbiB9IGZyb20gJy4uL2NvbXBvbmVudHMvYm91dG9uJztcbmltcG9ydCB7IExvZ2VtZW50U2VydmljZSB9IGZyb20gJy4uL3NlcnZpY2VzL2xvZ2VtZW50LnNlcnZpY2UnO1xuaW1wb3J0IHsgQXV0aFNlcnZpY2UgfSBmcm9tICcuLi9zZXJ2aWNlcy9hdXRoLnNlcnZpY2UnO1xuaW1wb3J0IHsgUmVzZXJ2YXRpb25TZXJ2aWNlIH0gZnJvbSAnLi4vc2VydmljZXMvcmVzZXJ2YXRpb24uc2VydmljZSc7XG5cbkBDb21wb25lbnQoe1xuICBpbXBvcnRzOiBbUm91dGVyTGluaywgQ2FydGVMb2dlbWVudCwgRmlsdHJlc0xvZ2VtZW50cywgQm91dG9uXSxcbiAgdGVtcGxhdGVVcmw6ICcuL2FjY3VlaWwuaHRtbCdcbn0pXG5leHBvcnQgY2xhc3MgQWNjdWVpbCB7XG4gIGJpZW5zID0gaW5qZWN0KExvZ2VtZW50U2VydmljZSk7XG4gIGF1dGggPSBpbmplY3QoQXV0aFNlcnZpY2UpO1xuICBkZW1hbmRlcyA9IGluamVjdChSZXNlcnZhdGlvblNlcnZpY2UpO1xuICByb3V0ZXIgPSBpbmplY3QoUm91dGVyKTtcbiAgY2F0ZWdvcmllcyA9IFtcbiAgICB7dGl0cmU6ICdBcHBhcnRlbWVudHMnLCB0eXBlOiAnQXBwYXJ0ZW1lbnQnLCBpbWFnZTogJ3Bob3RvLTE2MDAyMTA0OTI0ODYtNzI0ZmU1YzY3ZmIwJ30sXG4gICAge3RpdHJlOiAnTWFpc29ucycsIHR5cGU6ICdNYWlzb24nLCBpbWFnZTogJ3Bob3RvLTE2MDA2MDc2ODc5MjAtNGUyYTA5Y2YxNTlkJ30sXG4gICAge3RpdHJlOiAnU3R1ZGlvcycsIHR5cGU6ICdTdHVkaW8nLCBpbWFnZTogJ3Bob3RvLTE1MjI3MDgzMjM1OTAtZDI0ZGJiNmIwMjY3J30sXG4gICAge3RpdHJlOiAnVmlsbGFzJywgdHlwZTogJ1ZpbGxhJywgaW1hZ2U6ICdwaG90by0xNjAwNjA3Njg3OTM5LWNlOGE2YzI1MTE4Yyd9XG4gIF07XG4gIGdldCBhbm5vbmNlcygpIHsgcmV0dXJuIHRoaXMuYmllbnMubG9nZW1lbnRzLmZpbHRlcihsID0+ICFsLmFyY2hpdmUpOyB9XG4gIGdldCByZWNlbnRzKCkgeyByZXR1cm4gdGhpcy5hbm5vbmNlcy5zbGljZSgtMykucmV2ZXJzZSgpOyB9XG4gIC8vIENoaWZmcmVzIGNhbGN1bMOpcyDDoCBwYXJ0aXIgZGVzIGRvbm7DqWVzIHByw6lzZW50ZXMsIHNhbnMgc3RhdGlzdGlxdWVzIGludmVudMOpZXMuXG4gIGdldCBzdGF0aXN0aXF1ZXMoKSB7XG4gICAgcmV0dXJuIFtcbiAgICAgIHt2YWxldXI6IHRoaXMuYW5ub25jZXMubGVuZ3RoLCBsaWJlbGxlOiAnTG9nZW1lbnRzIHB1Ymxpw6lzJ30sXG4gICAgICB7dmFsZXVyOiB0aGlzLmF1dGguY29tcHRlcy5maWx0ZXIoYyA9PiBjLnJvbGUgPT09ICdwcm9wcmlldGFpcmUnKS5sZW5ndGgsIGxpYmVsbGU6ICdQcm9wcmnDqXRhaXJlcyBpbnNjcml0cyd9LFxuICAgICAge3ZhbGV1cjogbmV3IFNldCh0aGlzLmFubm9uY2VzLm1hcChsID0+IGwudmlsbGUudHJpbSgpLnRvTG93ZXJDYXNlKCkpKS5zaXplLCBsaWJlbGxlOiAnVmlsbGVzIGNvdXZlcnRlcyd9LFxuICAgICAge3ZhbGV1cjogdGhpcy5kZW1hbmRlcy5yZXNlcnZhdGlvbnMuZmlsdGVyKHIgPT4gci5zdGF0dXQgPT09ICdBY2NlcHTDqWUnKS5sZW5ndGgsIGxpYmVsbGU6ICdSw6lzZXJ2YXRpb25zIGFjY2VwdMOpZXMnfVxuICAgIF07XG4gIH1cbiAgY2hlcmNoZXIoY3JpdGVyZXM6IENyaXRlcmVzTG9nZW1lbnRzKTogdm9pZCB7XG4gICAgdGhpcy5yb3V0ZXIubmF2aWdhdGUoWycvbG9nZW1lbnRzJ10sIHtxdWVyeVBhcmFtczoge3ZpbGxlOiBjcml0ZXJlcy52aWxsZSB8fCBudWxsLCB0eXBlOiBjcml0ZXJlcy50eXBlIHx8IG51bGwsIG1heDogY3JpdGVyZXMubWF4fX0pO1xuICB9XG59XG4iLCI8c2VjdGlvbiBjbGFzcz1cImhlcm9cIj5cbiAgPGltZyBjbGFzcz1cImhlcm8tYmFja2dyb3VuZFwiIHNyYz1cImh0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9waG90by0xNjAwNjA3Njg3OTM5LWNlOGE2YzI1MTE4Yz9hdXRvPWZvcm1hdCZmaXQ9Y3JvcCZ3PTE4MDAmcT04NVwiIGFsdD1cIkFyY2hpdGVjdHVyZSBkJ3VuZSBtYWlzb24gY29udGVtcG9yYWluZSBvdXZlcnRlIHN1ciBsYSBuYXR1cmVcIiBmZXRjaHByaW9yaXR5PVwiaGlnaFwiPlxuICA8ZGl2IGNsYXNzPVwiaGVyby1jb3B5XCI+XG4gICAgPHAgY2xhc3M9XCJleWVicm93XCI+VU4gTElFVSDDgCBWT1VTLiBVTkUgTk9VVkVMTEUgSElTVE9JUkUuPC9wPlxuICAgIDxoMT5Ucm91dmV6IGxlIGxvZ2VtZW50PGJyPnF1aSB2b3VzIHJlc3NlbWJsZTwvaDE+XG4gICAgPHAgY2xhc3M9XCJoZXJvLWRlc2NyaXB0aW9uXCI+RMOpY291dnJleiBkZXMgYmllbnMgw6AgbG91ZXIgZXQgw6ljaGFuZ2V6IGRpcmVjdGVtZW50PGJyIGNsYXNzPVwiZGVza3RvcC1icmVha1wiPiBhdmVjIGxldXJzIHByb3ByacOpdGFpcmVzLjwvcD5cbiAgPC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJoZXJvLXNlYXJjaFwiPjxhcHAtZmlsdHJlcy1sb2dlbWVudHMgW2NvbXBhY3RdPVwidHJ1ZVwiIChyZWNoZXJjaGUpPVwiY2hlcmNoZXIoJGV2ZW50KVwiIC8+PC9kaXY+XG4gIDxzcGFuIGNsYXNzPVwiaGVyby1jYXB0aW9uXCI+TEEgQk9OTkUgQURSRVNTRSBQT1VSIFZPVFJFIFBST0NIQUlOIENIQVBJVFJFPC9zcGFuPlxuPC9zZWN0aW9uPlxuXG48c2VjdGlvbiBjbGFzcz1cImNvbnRhaW5lciBjYXRlZ29yaWVzLXNlY3Rpb25cIiBhcmlhLWxhYmVsPVwiQ2F0w6lnb3JpZXMgZGUgbG9nZW1lbnRzXCI+XG4gIDxkaXYgY2xhc3M9XCJjYXRlZ29yeS1ncmlkXCI+XG4gICAgQGZvciAoY2F0ZWdvcmllIG9mIGNhdGVnb3JpZXM7IHRyYWNrIGNhdGVnb3JpZS50eXBlKSB7XG4gICAgICA8YSBjbGFzcz1cImNhdGVnb3J5LWNhcmRcIiByb3V0ZXJMaW5rPVwiL2xvZ2VtZW50c1wiIFtxdWVyeVBhcmFtc109XCJ7dHlwZTogY2F0ZWdvcmllLnR5cGV9XCI+XG4gICAgICAgIDxpbWcgW3NyY109XCInaHR0cHM6Ly9pbWFnZXMudW5zcGxhc2guY29tLycgKyBjYXRlZ29yaWUuaW1hZ2UgKyAnP2F1dG89Zm9ybWF0JmZpdD1jcm9wJnc9NjAwJnE9ODAnXCIgW2FsdF09XCJjYXRlZ29yaWUudGl0cmVcIiBsb2FkaW5nPVwibGF6eVwiPlxuICAgICAgICA8c3Bhbj57e2NhdGVnb3JpZS50aXRyZX19IDxzcGFuIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPuKGlzwvc3Bhbj48L3NwYW4+XG4gICAgICA8L2E+XG4gICAgfVxuICA8L2Rpdj5cbjwvc2VjdGlvbj5cblxuPHNlY3Rpb24gY2xhc3M9XCJjb250YWluZXIgc2VjdGlvbiBpbnRyb2R1Y3Rpb25cIj5cbiAgPGRpdj5cbiAgICA8cCBjbGFzcz1cImV5ZWJyb3dcIj5QRU5Tw4kgUE9VUiBWT1RSRSBQUk9DSEFJTkUgw4lUQVBFPC9wPlxuICAgIDxoMj5Wb3RyZSBwcm9jaGFpbiBsb2dlbWVudCw8YnI+ZW4gdG91dGUgc2ltcGxpY2l0w6k8L2gyPlxuICAgIDxwIGNsYXNzPVwic3VidGl0bGVcIj5EZXMgcHJvcHJpw6l0YWlyZXMgZXQgZGVzIGxvY2F0YWlyZXMgcsOpdW5pcyBhdSBtw6ptZSBlbmRyb2l0LiBFeHBsb3JleiBsZXMgYW5ub25jZXMsIHRyb3V2ZXogdm90cmUgY291cCBkZSBjxZN1ciBldCBwcsOpcGFyZXogdm90cmUgYXJyaXbDqWUsIMOgIHZvdHJlIHJ5dGhtZS48L3A+XG4gICAgPGRpdiBjbGFzcz1cInBsYXRmb3JtLXN0YXRzXCI+XG4gICAgICBAZm9yIChzdGF0IG9mIHN0YXRpc3RpcXVlczsgdHJhY2sgc3RhdC5saWJlbGxlKSB7IDxkaXY+PHN0cm9uZz57e3N0YXQudmFsZXVyfX08L3N0cm9uZz48c3Bhbj57e3N0YXQubGliZWxsZX19PC9zcGFuPjwvZGl2PiB9XG4gICAgPC9kaXY+XG4gICAgPHNtYWxsPkNoaWZmcmVzIGlzc3VzIGRlcyBkb25uw6llcyBkZSBkw6ltb25zdHJhdGlvbiBkZSBsJ2FwcGxpY2F0aW9uLjwvc21hbGw+XG4gIDwvZGl2PlxuICA8ZGl2IGNsYXNzPVwicGhvdG8tY29sbGFnZVwiPlxuICAgIDxpbWcgY2xhc3M9XCJjb2xsYWdlLW1haW5cIiBzcmM9XCJodHRwczovL2ltYWdlcy51bnNwbGFzaC5jb20vcGhvdG8tMTYwMDIxMDQ5MjQ4Ni03MjRmZTVjNjdmYjA/YXV0bz1mb3JtYXQmZml0PWNyb3Amdz05MDAmcT04NVwiIGFsdD1cIlNhbG9uIGx1bWluZXV4IHBvdXIgdm90cmUgcHJvY2hhaW4gY2hlei12b3VzXCIgbG9hZGluZz1cImxhenlcIj5cbiAgICA8aW1nIGNsYXNzPVwiY29sbGFnZS1zbWFsbFwiIHNyYz1cImh0dHBzOi8vaW1hZ2VzLnVuc3BsYXNoLmNvbS9waG90by0xNjAwNjA3Njg3OTIwLTRlMmEwOWNmMTU5ZD9hdXRvPWZvcm1hdCZmaXQ9Y3JvcCZ3PTYwMCZxPTgwXCIgYWx0PVwiSW50w6lyaWV1ciBjaGFsZXVyZXV4IGV0IGNvbmZvcnRhYmxlXCIgbG9hZGluZz1cImxhenlcIj5cbiAgICA8ZGl2IGNsYXNzPVwiY29sbGFnZS1sYWJlbFwiPjxzcGFuIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPuKMgjwvc3Bhbj48c3Ryb25nPlVuIGNoZXotdm91cyw8YnI+w6Agdm90cmUgaW1hZ2UuPC9zdHJvbmc+PC9kaXY+XG4gIDwvZGl2PlxuPC9zZWN0aW9uPlxuXG48c2VjdGlvbiBjbGFzcz1cImNvbnRhaW5lciBzZWN0aW9uXCIgaWQ9XCJjb21tZW50LWNhLW1hcmNoZVwiPlxuICA8ZGl2IGNsYXNzPVwic2VjdGlvbi1oZWFkaW5nXCI+PGRpdj48cCBjbGFzcz1cImV5ZWJyb3dcIj5ERSBMJ0VOVklFIMOAIExBIE5PVVZFTExFIEFEUkVTU0U8L3A+PGgyPlVuZSBsb2NhdGlvbiBwbHVzIHNpbXBsZTwvaDI+PC9kaXY+PHAgY2xhc3M9XCJzZWN0aW9uLWRlc2NyaXB0aW9uXCI+UXVhdHJlIMOpdGFwZXMgcG91ciBkb25uZXIgdmllPGJyPsOgIHZvdHJlIHByb2pldCBkZSBsb2NhdGlvbi48L3A+PC9kaXY+XG4gIDxkaXYgY2xhc3M9XCJzZXJ2aWNlLWdyaWRcIj5cbiAgICA8YSBjbGFzcz1cInNlcnZpY2UtY2FyZFwiIHJvdXRlckxpbms9XCIvbG9nZW1lbnRzXCI+PHNwYW4gY2xhc3M9XCJzZXJ2aWNlLWljb25cIiBhcmlhLWhpZGRlbj1cInRydWVcIj7ijJU8L3NwYW4+PHNwYW4gY2xhc3M9XCJzdGVwLW51bWJlclwiPjAxPC9zcGFuPjxoMz5SZWNoZXJjaGV6IHZvdHJlIGxvZ2VtZW50PC9oMz48cD5GaWx0cmV6IGxlcyBhbm5vbmNlcyBzZWxvbiB2b3RyZSB2aWxsZSwgdm90cmUgYnVkZ2V0IGV0IHZvcyBlbnZpZXMuPC9wPjxzcGFuIGNsYXNzPVwic2VydmljZS1saW5rXCI+VHJvdXZlciBtb24gYWRyZXNzZSDihpc8L3NwYW4+PC9hPlxuICAgIDxhIGNsYXNzPVwic2VydmljZS1jYXJkXCIgcm91dGVyTGluaz1cIi9sb2dlbWVudHNcIj48c3BhbiBjbGFzcz1cInNlcnZpY2UtaWNvblwiIGFyaWEtaGlkZGVuPVwidHJ1ZVwiPuKMgjwvc3Bhbj48c3BhbiBjbGFzcz1cInN0ZXAtbnVtYmVyXCI+MDI8L3NwYW4+PGgzPkNvbnN1bHRleiBsZXMgZMOpdGFpbHM8L2gzPjxwPkTDqWNvdXZyZXogbGVzIHBob3RvcywgbGVzIMOpcXVpcGVtZW50cyBldCBsZSBsb3llciBkZSBjaGFxdWUgbG9nZW1lbnQuPC9wPjxzcGFuIGNsYXNzPVwic2VydmljZS1saW5rXCI+RXhwbG9yZXIgbGVzIGFubm9uY2VzIOKGlzwvc3Bhbj48L2E+XG4gICAgPGEgY2xhc3M9XCJzZXJ2aWNlLWNhcmRcIiByb3V0ZXJMaW5rPVwiL3Jlc2VydmF0aW9uc1wiPjxzcGFuIGNsYXNzPVwic2VydmljZS1pY29uXCIgYXJpYS1oaWRkZW49XCJ0cnVlXCI+4pakPC9zcGFuPjxzcGFuIGNsYXNzPVwic3RlcC1udW1iZXJcIj4wMzwvc3Bhbj48aDM+RW52b3lleiB2b3RyZSBkZW1hbmRlPC9oMz48cD5DaG9pc2lzc2V6IHZvcyBkYXRlcyBldCBhZHJlc3NleiB2b3RyZSBwcm9qZXQgYXUgcHJvcHJpw6l0YWlyZS48L3A+PHNwYW4gY2xhc3M9XCJzZXJ2aWNlLWxpbmtcIj5TdWl2cmUgbWVzIGRlbWFuZGVzIOKGlzwvc3Bhbj48L2E+XG4gICAgPGEgY2xhc3M9XCJzZXJ2aWNlLWNhcmQgZmVhdHVyZWRcIiByb3V0ZXJMaW5rPVwiL3Byb3ByaWV0YWlyZS9ham91dGVyXCI+PHNwYW4gY2xhc3M9XCJzZXJ2aWNlLWljb25cIiBhcmlhLWhpZGRlbj1cInRydWVcIj7vvIs8L3NwYW4+PHNwYW4gY2xhc3M9XCJzdGVwLW51bWJlclwiPjA0PC9zcGFuPjxoMz5QdWJsaWV6IHZvdHJlIGJpZW48L2gzPjxwPkFqb3V0ZXogdm90cmUgbG9nZW1lbnQgZXQgZ8OpcmV6IGxlcyBkZW1hbmRlcyBkZXB1aXMgdm90cmUgZXNwYWNlLjwvcD48c3BhbiBjbGFzcz1cInNlcnZpY2UtbGlua1wiPlBhcnRhZ2VyIG1vbiBiaWVuIOKGlzwvc3Bhbj48L2E+XG4gIDwvZGl2PlxuPC9zZWN0aW9uPlxuXG48c2VjdGlvbiBjbGFzcz1cImNvbnRhaW5lciBzZWN0aW9uXCI+XG4gIDxkaXYgY2xhc3M9XCJzZWN0aW9uLWhlYWRpbmdcIj48ZGl2PjxwIGNsYXNzPVwiZXllYnJvd1wiPlZPVFJFIFBST0NIQUlOIENPVVAgREUgQ8WSVVI8L3A+PGgyPkTDqWNvdXZyZXogbGVzIGxvZ2VtZW50cyBkaXNwb25pYmxlczwvaDI+PHAgY2xhc3M9XCJzdWJ0aXRsZVwiPkRlIGJlbGxlcyBhZHJlc3NlcyBwb3VyIMOpY3JpcmUgbGEgc3VpdGUgZGUgdm90cmUgaGlzdG9pcmUuPC9wPjwvZGl2PjwvZGl2PlxuICA8ZGl2IGNsYXNzPVwiY2FyZHNcIj5AZm9yIChsb2dlbWVudCBvZiByZWNlbnRzOyB0cmFjayBsb2dlbWVudC5pZCkgeyA8YXBwLWNhcnRlLWxvZ2VtZW50IFtsb2dlbWVudF09XCJsb2dlbWVudFwiIC8+IH0gQGVtcHR5IHsgPGRpdiBjbGFzcz1cImVtcHR5XCI+PGgzPkRlIG5vdXZlbGxlcyBhZHJlc3NlcyBhcnJpdmVudCBiaWVudMO0dDwvaDM+PHA+QXVjdW4gbG9nZW1lbnQgbidlc3QgcHVibGnDqSBwb3VyIGxlIG1vbWVudC48L3A+PC9kaXY+IH08L2Rpdj5cbiAgPGRpdiBjbGFzcz1cImNlbnRlci1hY3Rpb25cIj48YSBhcHBCb3V0b24gcm91dGVyTGluaz1cIi9sb2dlbWVudHNcIj5Wb2lyIHRvdXMgbGVzIGxvZ2VtZW50cyDihpc8L2E+PC9kaXY+XG48L3NlY3Rpb24+XG4iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLFNBQVMsV0FBVyxjQUFjO0FBQ2xDLFNBQVMsUUFBUSxrQkFBa0I7Ozs7Ozs7O0FDYTdCLElBQUEsNEJBQUEsR0FBQSxLQUFBLEVBQUE7QUFDRSxJQUFB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QUFBLEdBQUEsT0FBQSxLQUFBLE1BQUEsR0FBQSxRQUFBLENBQUEsQ0FBQSxHQUFBLE1BQUEsR0FBQSxDQUFBLE9BQUEsaUdBQUEsT0FBQSxpRUFBQSxpQkFBQSxRQUFBLEdBQUEsaUJBQUEsR0FBQSxDQUFBLEdBQUEsV0FBQSxHQUFBLENBQUEsR0FBQSxTQUFBLEdBQUEsQ0FBQSxHQUFBLGtCQUFBLEdBQUEsQ0FBQSxHQUFBLGVBQUEsR0FBQSxDQUFBLEdBQUEsYUFBQSxHQUFBLENBQUEsR0FBQSxhQUFBLFNBQUEsR0FBQSxDQUFBLEdBQUEsY0FBQSxHQUFBLENBQUEsY0FBQSw4QkFBQSxHQUFBLGFBQUEsb0JBQUEsR0FBQSxDQUFBLEdBQUEsZUFBQSxHQUFBLENBQUEsY0FBQSxjQUFBLEdBQUEsaUJBQUEsR0FBQSxhQUFBLEdBQUEsQ0FBQSxHQUFBLGFBQUEsV0FBQSxjQUFBLEdBQUEsQ0FBQSxHQUFBLFVBQUEsR0FBQSxDQUFBLEdBQUEsZ0JBQUEsR0FBQSxDQUFBLEdBQUEsZUFBQSxHQUFBLENBQUEsT0FBQSxnR0FBQSxPQUFBLGdEQUFBLFdBQUEsUUFBQSxHQUFBLGNBQUEsR0FBQSxDQUFBLE9BQUEsZ0dBQUEsT0FBQSwwQ0FBQSxXQUFBLFFBQUEsR0FBQSxlQUFBLEdBQUEsQ0FBQSxHQUFBLGVBQUEsR0FBQSxDQUFBLGVBQUEsTUFBQSxHQUFBLENBQUEsTUFBQSxxQkFBQSxHQUFBLGFBQUEsU0FBQSxHQUFBLENBQUEsR0FBQSxpQkFBQSxHQUFBLENBQUEsR0FBQSxxQkFBQSxHQUFBLENBQUEsR0FBQSxjQUFBLEdBQUEsQ0FBQSxjQUFBLGNBQUEsR0FBQSxjQUFBLEdBQUEsQ0FBQSxlQUFBLFFBQUEsR0FBQSxjQUFBLEdBQUEsQ0FBQSxHQUFBLGFBQUEsR0FBQSxDQUFBLEdBQUEsY0FBQSxHQUFBLENBQUEsY0FBQSxpQkFBQSxHQUFBLGNBQUEsR0FBQSxDQUFBLGNBQUEseUJBQUEsR0FBQSxnQkFBQSxVQUFBLEdBQUEsQ0FBQSxHQUFBLGFBQUEsU0FBQSxHQUFBLENBQUEsR0FBQSxPQUFBLEdB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
